@@ -1,3 +1,16 @@
+# v0.1.10 (Wed Aug 04 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- yay updated to build correctly ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.9 (Wed Aug 04 2021)
 
 #### ⚠️ Pushed to `main`
