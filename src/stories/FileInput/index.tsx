@@ -2,7 +2,7 @@ import React, { ChangeEvent, DragEvent, useState, useCallback } from "react";
 import File from "../assets/img/file.png";
 import "./FileInput.scss";
 
-interface FileInputProps {
+export interface FileInputProps {
     multipleFiles?: boolean;
     name: string;
     label?: string;

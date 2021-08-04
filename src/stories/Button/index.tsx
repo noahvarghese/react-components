@@ -2,7 +2,7 @@ import React, { MouseEvent } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Button.scss";
 
-interface ButtonProps {
+export interface ButtonProps {
     /**
      * Is this the principal call to action on the page?
      */
@@ -18,7 +18,7 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
     primary = false,
     size = "small",
     type = "button",
@@ -54,3 +54,5 @@ export const Button: React.FC<ButtonProps> = ({
         );
     }
 };
+
+export default Button;

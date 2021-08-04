@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Checkbox.scss";
 
-interface CheckboxProps {
+export interface CheckboxProps {
     name: string;
     label?: string;
     checked?: boolean;
