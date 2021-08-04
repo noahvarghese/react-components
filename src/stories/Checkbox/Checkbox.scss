@@ -3,6 +3,11 @@
 .checkbox {
     position: relative;
 
+    *,
+    & {
+        box-sizing: border-box;
+    }
+
     input[type="checkbox"] {
         opacity: 0;
         position: absolute;
