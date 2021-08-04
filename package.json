@@ -1,10 +1,7 @@
 {
     "name": "@noahvarghese/react-components",
     "version": "0.1.7",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/noahvarghese/react-components.git"
-    },
+    "repository": "git+https://github.com/noahvarghese/react-components.git",
     "bugs": {
         "url": "https://github.com/noahvarghese/react-components/issues"
     },
@@ -12,7 +9,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build-declaration": "./node_modules/.bin/tsc -p .",
-        "build": "react-scripts build",
+        "build": "cross-env BABEL_ENV=production babel src -d dist",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "storybook": "start-storybook -p 6006 -s public",
@@ -66,15 +63,33 @@
         "web-vitals": "^1.0.1"
     },
     "devDependencies": {
+        "@babel/cli": "^7.14.8",
         "@storybook/addon-actions": "^6.3.6",
         "@storybook/addon-essentials": "^6.3.6",
         "@storybook/addon-links": "^6.3.6",
         "@storybook/node-logger": "^6.3.6",
         "@storybook/preset-create-react-app": "^3.2.0",
-        "@storybook/react": "^6.3.6"
+        "@storybook/react": "^6.3.6",
+        "auto": "^10.30.0",
+        "cross-env": "^7.0.3"
     },
     "files": [
         "./src/index.d.ts",
         "./src/types/global.d.ts"
-    ]
+    ],
+    "babel": {
+        "presets": [
+            [
+                "react-app",
+                {
+                    "absoluteRuntime": false
+                }
+            ]
+        ]
+    },
+    "description": "React components",
+    "main": "dist/index.js",
+    "author": "noahvarghese <varghese.noah@gmail.com>",
+    "license": "MIT",
+    "private": false
 }
