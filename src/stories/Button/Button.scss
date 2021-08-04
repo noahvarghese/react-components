@@ -1,0 +1,70 @@
+@import "../assets/scss/colors.scss";
+
+a.button,
+button.button {
+    &:not(:disabled) {
+        border: none;
+    }
+
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px rgba(43.9, 43.9, 43.9, 0.2);
+    transition: all 0.3s ease;
+    outline: none;
+    text-align: center;
+    text-transform: uppercase;
+
+    &.button--primary {
+        &:not(:disabled) {
+            background-color: $primary;
+            color: white;
+        }
+
+        &:disabled {
+            color: $secondary;
+            background-color: white;
+            border: 2px solid $primary;
+        }
+    }
+
+    &.button--secondary {
+        background-color: $secondary;
+        color: white;
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:disabled {
+            color: $secondary;
+            background-color: white;
+        }
+    }
+
+    &.button--small {
+        padding: 0.5rem 2.5rem;
+        // font-size: 1.2rem;
+    }
+
+    &.button--medium {
+        padding: 0.5rem 3rem;
+        // font-size: 1.2rem;
+    }
+
+    &.button--large {
+        padding: 0.75rem 4rem;
+        // font-size: 1.5rem;
+    }
+
+    &:hover {
+        z-index: 100;
+        transform: scale(1.01);
+        box-shadow: 4px 8px 10px rgba(43.9, 43.9, 43.9, 0.5);
+        cursor: pointer;
+    }
+
+    @media only screen and (min-width: 1367px) {
+        font-size: 1rem;
+    }
+    @media only screen and (max-width: 1366px) {
+        font-size: 0.9rem;
+    }
+}
