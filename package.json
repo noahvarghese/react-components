@@ -1,6 +1,14 @@
 {
     "name": "@noahvarghese/react-components",
-    "version": "0.1.1",
+    "version": "0.1.2",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/noahvarghese/react-components.git"
+    },
+    "bugs": {
+        "url": "https://github.com/noahvarghese/react-components/issues"
+    },
+    "homepage": "https://github.com/noahvarghese/react-components#readme",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
