@@ -1,0 +1,52 @@
+@import "../assets/scss/colors.scss";
+
+.checkbox {
+    position: relative;
+
+    input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+
+        & + label::before {
+            content: "";
+            border: 2px solid $primary;
+            display: inline-block;
+            vertical-align: middle;
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            margin-top: -5px;
+            text-align: center;
+            overflow: hidden;
+
+            background-image: linear-gradient($primary, $primary);
+            background-position: 52% 52%;
+            background-repeat: no-repeat;
+            background-size: 0% 0%;
+
+            transition: background-size 0.1s ease;
+        }
+
+        &:checked + label::before {
+            box-shadow: inset 0px 0px 0px 0px $primary;
+            background-size: 100% 100%;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    label {
+        position: relative;
+    }
+
+    input[type="checkbox"],
+    label {
+        font-size: 1.2rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px;
+        cursor: pointer;
+    }
+}

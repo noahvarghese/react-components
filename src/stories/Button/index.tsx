@@ -11,8 +11,8 @@ interface ButtonProps {
     disabled?: boolean;
     link?: string;
     onClick?: (e: MouseEvent<unknown, unknown>) => void;
-    size: "small" | "medium" | "large";
-    type: "button" | "reset" | "submit";
+    size?: "small" | "medium" | "large";
+    type?: "button" | "reset" | "submit";
 }
 
 /**
@@ -20,7 +20,7 @@ interface ButtonProps {
  */
 export const Button: React.FC<ButtonProps> = ({
     primary = false,
-    size = "medium",
+    size = "small",
     type = "button",
     ...props
 }) => {
