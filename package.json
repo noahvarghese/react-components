@@ -9,7 +9,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build-declaration": "./node_modules/.bin/tsc -p .",
-        "build": "cross-env BABEL_ENV=production babel src -d dist",
+        "build": "cross-env BABEL_ENV=production babel --extensions '.tsx' src -d dist",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "storybook": "start-storybook -p 6006 -s public",
@@ -75,7 +75,6 @@
         "cross-env": "^7.0.3"
     },
     "files": [
-        "./src/index.d.ts",
         "./src/types/global.d.ts"
     ],
     "babel": {
