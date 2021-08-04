@@ -1,6 +1,6 @@
 {
     "name": "@noahvarghese/react-components",
-    "version": "0.1.2",
+    "version": "0.1.7",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/noahvarghese/react-components.git"
@@ -17,8 +17,7 @@
         "eject": "react-scripts eject",
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
-        "prepublish": "yarn build-declaration",
-        "publish": "npm publish --access public"
+        "prepublish": "yarn build-declaration"
     },
     "eslintConfig": {
         "extends": [
