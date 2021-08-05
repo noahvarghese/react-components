@@ -1,3 +1,17 @@
+# v0.1.11 (Thu Aug 05 2021)
+
+#### ⚠️ Pushed to `main`
+
+- generated declaration ([@noahvarghese](https://github.com/noahvarghese))
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- added declaration to export and included all files ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.10 (Wed Aug 04 2021)
 
 #### ⚠️ Pushed to `main`
