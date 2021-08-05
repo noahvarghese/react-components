@@ -1,3 +1,17 @@
+# v0.1.12 (Thu Aug 05 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Added lib to gitignore ([@noahvarghese](https://github.com/noahvarghese))
+- deleted build folder ([@noahvarghese](https://github.com/noahvarghese))
+- lets try this again ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.11 (Thu Aug 05 2021)
 
 #### ⚠️ Pushed to `main`
