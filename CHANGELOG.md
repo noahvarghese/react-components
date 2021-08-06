@@ -1,3 +1,18 @@
+# v0.1.14 (Fri Aug 06 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added assets to npm package files ([@noahvarghese](https://github.com/noahvarghese))
+- Referenced assets properly ([@noahvarghese](https://github.com/noahvarghese))
+- Merge branch 'main' of https://github.com/noahvarghese/react-components into main ([@noahvarghese](https://github.com/noahvarghese))
+- got assets copied to output ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.13 (Thu Aug 05 2021)
 
 #### ⚠️ Pushed to `main`
