@@ -11,8 +11,10 @@
     "homepage": "https://github.com/noahvarghese/react-components#readme",
     "scripts": {
         "start": "react-scripts start",
+        "prebuild": "rm -rf lib",
         "build-declaration": "./node_modules/.bin/tsc -p .",
         "build": "yarn build:esm && yarn build:cjs",
+        "postbuild": "yarn copy-styles",
         "build:esm": "tsc",
         "build:cjs": "tsc --module commonjs --outDir lib/cjs",
         "test": "react-scripts test",
@@ -20,7 +22,9 @@
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
         "prepublish": "yarn build-declaration",
-        "release": "auto shipit --base-branch=main"
+        "release": "auto shipit --base-branch=main",
+        "copy-assets": "copyfiles src/assets/**/* lib/cjs && copyfiles src/assets/**/* lib/esm",
+        "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm"
     },
     "eslintConfig": {
         "extends": [
@@ -70,18 +74,19 @@
         "@storybook/node-logger": "^6.3.6",
         "@storybook/preset-create-react-app": "^3.2.0",
         "@storybook/react": "^6.3.6",
-        "auto": "^10.30.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "cross-env": "^7.0.3",
-        "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
         "@types/jest": "^26.0.15",
         "@types/node": "^12.0.0",
-        "@types/react-router-dom": "^5.1.8"
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "@types/react-router-dom": "^5.1.8",
+        "auto": "^10.30.0",
+        "copyfiles": "^2.4.1",
+        "cross-env": "^7.0.3",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "files": [
         "/lib"
