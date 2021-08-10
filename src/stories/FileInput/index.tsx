@@ -1,5 +1,5 @@
 import React, { ChangeEvent, DragEvent, useState, useCallback } from "react";
-import File from "../../../assets/img/file.png";
+import File from "../../assets/img/file.png";
 import "./FileInput.scss";
 
 export interface FileInputProps {

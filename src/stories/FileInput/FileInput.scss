@@ -1,4 +1,4 @@
-@import "../../../assets/scss/colors.scss";
+@import "../../assets/scss/colors.scss";
 
 .file-input {
     *,
@@ -23,6 +23,7 @@
         border: 2px dashed $secondary;
         font-size: 1.2rem;
         transition: all 0.3s ease;
+        color: $secondary;
 
         & > *:not(:last-of-type) {
             margin-bottom: 1rem;
