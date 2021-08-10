@@ -29,6 +29,8 @@ jobs:
                   key: yarn-deps-${{ hashFiles('yarn.lock') }}
                   restore-keys: |
                       yarn-deps-${{ hashFiles('yarn.lock') }}
+            - name: Check versions
+              run: npx tsc -v && yarn -v
             - name: Create Release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
