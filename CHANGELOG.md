@@ -1,3 +1,16 @@
+# v0.1.17 (Tue Aug 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Added package lock to gitignore ([@noahvarghese](https://github.com/noahvarghese))
+- removed package-lock.json ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.16 (Tue Aug 10 2021)
 
 #### ⚠️ Pushed to `main`
