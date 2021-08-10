@@ -1,3 +1,15 @@
+# v0.1.22 (Tue Aug 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- explicitly set background color and text color ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.21 (Tue Aug 10 2021)
 
 #### ⚠️ Pushed to `main`
