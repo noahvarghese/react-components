@@ -1,3 +1,15 @@
+# v0.1.23 (Tue Aug 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- updated copy script, and made sure strorybook works ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.22 (Tue Aug 10 2021)
 
 #### ⚠️ Pushed to `main`
