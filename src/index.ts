@@ -1,9 +1,7 @@
-import Button from "./stories/Button/";
-import Checkbox from "./stories/Checkbox";
-import FileInput from "./stories/FileInput";
+// visual components 
+export { default as Button } from "./stories/Button/";
+export { default as Checkbox } from "./stories/Checkbox";
+export { default as FileInput } from "./stories/FileInput";
 
-export default {
-    Button,
-    Checkbox,
-    FileInput
-}
+// behavioural components (or components that are not visible)
+export { default as ProtectedRoute } from "./components/ProtectedRoute";
