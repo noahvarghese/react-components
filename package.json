@@ -14,7 +14,7 @@
         "prebuild": "rm -rf lib",
         "build-declaration": "./node_modules/.bin/tsc -p .",
         "build": "yarn build:esm && yarn build:cjs",
-        "postbuild": "yarn copy-styles",
+        "postbuild": "yarn copy-styles && yarn copy-assets",
         "build:esm": "tsc",
         "build:cjs": "tsc --module commonjs --outDir lib/cjs",
         "test": "react-scripts test",
@@ -23,7 +23,7 @@
         "build-storybook": "build-storybook -s public",
         "prepublish": "yarn build-declaration",
         "release": "auto shipit --base-branch=main",
-        "copy-assets": "copyfiles src/assets/**/* lib/cjs && copyfiles src/assets/**/* lib/esm",
+        "copy-assets": "cp -R ./assets lib/cjs && cp -R ./assets lib/esm",
         "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm"
     },
     "eslintConfig": {
@@ -89,8 +89,7 @@
         "react-dom": "^17.0.2"
     },
     "files": [
-        "/lib",
-        "/assets"
+        "/lib"
     ],
     "babel": {
         "presets": [
