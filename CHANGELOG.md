@@ -1,3 +1,34 @@
+# v0.1.24 (Wed Aug 11 2021)
+
+#### ⚠️ Pushed to `main`
+
+- typo in npm commands ([@noahvarghese](https://github.com/noahvarghese))
+- copy in js ([@noahvarghese](https://github.com/noahvarghese))
+- moved default scss to project root ([@noahvarghese](https://github.com/noahvarghese))
+- dont throw error ([@noahvarghese](https://github.com/noahvarghese))
+- added console output ([@noahvarghese](https://github.com/noahvarghese))
+- customized exit code ([@noahvarghese](https://github.com/noahvarghese))
+- forgot to skip first couter ([@noahvarghese](https://github.com/noahvarghese))
+- renamed default to clarify its purpose ([@noahvarghese](https://github.com/noahvarghese))
+- moved default.scss to root ([@noahvarghese](https://github.com/noahvarghese))
+- typo ([@noahvarghese](https://github.com/noahvarghese))
+- prefix commands with node ([@noahvarghese](https://github.com/noahvarghese))
+- attempt 3 ([@noahvarghese](https://github.com/noahvarghese))
+- Added preintsall and install deps ([@noahvarghese](https://github.com/noahvarghese))
+- removed wrapper from preinstall ([@noahvarghese](https://github.com/noahvarghese))
+- updated script permissions ([@noahvarghese](https://github.com/noahvarghese))
+- added scripts to package ([@noahvarghese](https://github.com/noahvarghese))
+- converted install script to js script ([@noahvarghese](https://github.com/noahvarghese))
+- force build before install ([@noahvarghese](https://github.com/noahvarghese))
+- got themer working, teesting install script and path to resultant config file ([@noahvarghese](https://github.com/noahvarghese))
+- added install script to test directory structure ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.23 (Tue Aug 10 2021)
 
 #### ⚠️ Pushed to `main`
