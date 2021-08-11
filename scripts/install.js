@@ -10,6 +10,8 @@ const readline = require("readline");
         return;
     }
 
+    fs.copyFileSync("../default.config.scss", "../../../../components.config.scss");
+
     const relativePath = "../../../../components.config.scss";
     const scssFile = path.resolve(__dirname, relativePath);
 
