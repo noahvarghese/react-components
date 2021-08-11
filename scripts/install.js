@@ -5,7 +5,7 @@ const readline = require("readline");
 (async () => {
     if (!fs.existsSync("./lib")) {
         // cp.execSync("yarn build");
-        process.exit(1);
+        process.exit(50);
         return;
     }
 
