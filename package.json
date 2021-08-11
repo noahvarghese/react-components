@@ -25,7 +25,7 @@
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
         "release": "auto shipit --base-branch=main",
-        "install": "node ./scripts/install.js && cp ./default.scss ../../../../components.config.scss",
+        "install": "node ./scripts/install.js && cp ./default.config.scss ../../../../components.config.scss",
         "uninstall": "rm ../../../../components.config.scss"
     },
     "eslintConfig": {
@@ -96,7 +96,7 @@
     "files": [
         "/lib",
         "/scripts",
-        "default.scss"
+        "default.config.scss"
     ],
     "babel": {
         "presets": [
