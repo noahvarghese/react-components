@@ -25,8 +25,8 @@
         "release": "auto shipit --base-branch=main",
         "copy-assets": "cp -R src/assets lib/cjs && cp -R src/assets lib/esm",
         "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm",
-        "preinstall": "scripts/preinstall.js",
-        "install": "scripts/install.js",
+        "preinstall": "node scripts/preinstall.js",
+        "install": "node scripts/install.js",
         "uninstall": "rm ../../../../components.config.scss"
     },
     "eslintConfig": {
