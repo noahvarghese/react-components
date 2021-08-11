@@ -25,7 +25,7 @@
         "release": "auto shipit --base-branch=main",
         "copy-assets": "cp -R src/assets lib/cjs && cp -R src/assets lib/esm",
         "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm",
-        "preinstall": "cp ./lib/esm/assets/scss/default.scss ../../../../components.config.scss",
+        "preinstall": "yarn build && cp ./lib/esm/assets/scss/default.scss ../../../../components.config.scss",
         "install": "scripts/install.js",
         "uninstall": "rm ../../../../components.config.scss"
     },
