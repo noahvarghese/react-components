@@ -24,7 +24,9 @@
         "prepublish": "yarn build-declaration",
         "release": "auto shipit --base-branch=main",
         "copy-assets": "cp -R src/assets lib/cjs && cp -R src/assets lib/esm",
-        "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm"
+        "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm",
+        "install": "./scripts/config.js",
+        "uninstall": "scripts/uninstall.js"
     },
     "eslintConfig": {
         "extends": [
@@ -89,7 +91,8 @@
         "react-dom": "^17.0.2"
     },
     "files": [
-        "/lib"
+        "/lib",
+        "/scripts"
     ],
     "babel": {
         "presets": [
