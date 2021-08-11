@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import "../../assets/scss";
 
 a.button,
 button.button {
@@ -8,6 +8,12 @@ button.button {
     outline: none;
     text-align: center;
     text-transform: uppercase;
+    font-family: $_header-font-family;
+    letter-spacing: $_header-letter-spacing;
+
+    &::after {
+        content: $_header-font-family;
+    }
 
     *,
     & {
@@ -20,26 +26,26 @@ button.button {
 
     &.button--primary {
         &:not(:disabled) {
-            background-color: $primary;
+            background-color: $_primary-color;
             color: white;
         }
 
         &:disabled {
-            color: $secondary;
+            color: $_secondary-color;
             background-color: white;
-            border: 2px solid $primary;
+            border: 2px solid $_primary-color;
         }
     }
 
     &.button--secondary {
-        background-color: $secondary;
+        background-color: $_secondary-color;
         color: white;
         &:hover {
             transform: scale(1.05);
         }
 
         &:disabled {
-            color: $secondary;
+            color: $_secondary-color;
             background-color: white;
         }
     }

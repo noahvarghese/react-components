@@ -1,4 +1,4 @@
-@import "../../assets/scss/colors.scss";
+@import "../../assets/scss";
 
 .checkbox {
     position: relative;
@@ -14,7 +14,7 @@
 
         & + label::before {
             content: "";
-            border: 2px solid $primary;
+            border: 2px solid $_primary-color;
             display: inline-block;
             vertical-align: middle;
             width: 18px;
@@ -24,7 +24,7 @@
             text-align: center;
             overflow: hidden;
 
-            background-image: linear-gradient($primary, $primary);
+            background-image: linear-gradient($_primary-color, $_primary-color);
             background-position: 52% 52%;
             background-repeat: no-repeat;
             background-size: 0% 0%;
@@ -33,7 +33,7 @@
         }
 
         &:checked + label::before {
-            box-shadow: inset 0px 0px 0px 0px $primary;
+            box-shadow: inset 0px 0px 0px 0px $_primary-color;
             background-size: 100% 100%;
         }
 

@@ -1,0 +1,14 @@
+// Import fonts to be used
+@function font-path($font, $font-style: "Regular") {
+    @return "../fonts/" + $font + "/" + $font + "-" + $font-style + ".ttf";
+}
+
+@font-face {
+    font-family: $_header-font-family;
+    src: url(font-path($_header-font-family, $_header-font-style));
+}
+
+@font-face {
+    font-family: $_content-font-family;
+    src: url(font-path($_content-font-family));
+}

@@ -1,0 +1,145 @@
+// Get from theme mapping
+$selected-theme: if(
+    variable-exists(
+        $name: "default-theme",
+    ),
+    map-get($themes, $default-theme),
+    ""
+);
+
+// Set base variables
+$_primary-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, primary-color),
+    $primary-color
+);
+
+$_secondary-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, secondary-color),
+    $secondary-color
+);
+
+$_highlight-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, _highlight-color),
+    $_highlight-color
+);
+
+$_accent-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, accent-color),
+    $accent-color
+);
+
+$_bg-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, bg-color),
+    $bg-color
+);
+
+$_secondary-bg-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, secondary-bg-color),
+    $secondary-bg-color
+);
+
+$_root-font-size: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, root-font-size),
+    $root-font-size
+);
+
+$_header-font-family: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, header-font-family),
+    $header-font-family
+);
+
+$_header-font-style: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, header-font-style),
+    $header-font-style
+);
+
+$_header-letter-spacing: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, header-letter-spacing),
+    $header-letter-spacing
+);
+
+$_header-line-height: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, header-line-height),
+    $header-line-height
+);
+
+$_content-font-family: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, content-font-family),
+    $content-font-family
+);
+
+$_content-font-style: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, content-font-style),
+    $content-font-style
+);
+
+$_content-letter-spacing: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, content-letter-spacing),
+    $content-letter-spacing
+);
+
+$_content-line-height: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, content-line-height),
+    $content-line-height
+);
+
+$_content-font-size: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, content-font-size),
+    $content-font-size
+);
+
+$_accent-font-style: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, accent-font-style),
+    $accent-font-style
+);
