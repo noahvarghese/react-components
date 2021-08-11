@@ -3,6 +3,11 @@ const path = require("path");
 const readline = require("readline");
 
 (async () => {
+    if (!fs.existsSync("./lib")) {
+        // cp.execSync("yarn build");
+        process.exit(1);
+        return;
+    }
 
     const relativePath = "../../../../components.config.scss";
     const scssFile = path.resolve(__dirname, relativePath);

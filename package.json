@@ -11,22 +11,21 @@
     "homepage": "https://github.com/noahvarghese/react-components#readme",
     "scripts": {
         "start": "react-scripts start",
-        "prebuild": "rm -rf lib",
-        "build-declaration": "./node_modules/.bin/tsc -p .",
-        "build": "yarn build:esm && yarn build:cjs",
-        "postbuild": "yarn copy-styles && yarn copy-assets",
-        "build:esm": "tsc",
-        "build:cjs": "tsc --module commonjs --outDir lib/cjs",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "storybook": "start-storybook -p 6006 -s public",
-        "build-storybook": "build-storybook -s public",
-        "prepublish": "yarn build-declaration",
-        "release": "auto shipit --base-branch=main",
         "copy-assets": "cp -R src/assets lib/cjs && cp -R src/assets lib/esm",
         "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm",
-        "preinstall": "node scripts/preinstall.js",
-        "install": "node scripts/install.js",
+        "delaration": "./node_modules/.bin/tsc -p .",
+        "prepublish": "yarn declaration",
+        "prebuild": "rm -rf lib",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+        "build": "yarn build:esm && yarn build:cjs",
+        "postbuild": "yarn copy-styles && yarn copy-assets",
+        "storybook": "start-storybook -p 6006 -s public",
+        "build-storybook": "build-storybook -s public",
+        "release": "auto shipit --base-branch=main",
+        "install": "node ./scripts/install.js && cp ./default.scss ../../../../components.config.scss",
         "uninstall": "rm ../../../../components.config.scss"
     },
     "eslintConfig": {
@@ -96,7 +95,8 @@
     },
     "files": [
         "/lib",
-        "/scripts"
+        "/scripts",
+        "default.scss"
     ],
     "babel": {
         "presets": [
