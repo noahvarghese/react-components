@@ -30,9 +30,4 @@ const readline = require("readline");
         newContents += '\r\n';
         counter++;
     }
-
-
-    // const npmCmd = os.platform().startsWith("win") ? "npm.cmd" : "npm";
-
-    // cp.spawn(npmCmd, [])
 })();

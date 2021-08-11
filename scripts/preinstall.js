@@ -1,5 +1,5 @@
 const fs = require("fs");
-const cp = require("child-process");
+const cp = require("child_process");
 
 (() => {
     if (!fs.existsSync("./lib")) {
