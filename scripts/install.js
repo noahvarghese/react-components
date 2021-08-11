@@ -26,7 +26,7 @@ const readline = require("readline");
     let newContents = "";
 
     for await (const line of rl) {
-        if (counter === 0) {
+        if (counter === 1) {
             newContents += newFirstLine;
         } else {
             newContents += line
