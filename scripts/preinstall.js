@@ -1,8 +1,10 @@
-import { existsSync } from "fs";
-import { execSync } from "child_process";
+const fs = require("fs");
+const cp = require("child-process");
 
-if (!existsSync("./lib")) {
-    execSync("yarn build");
-}
+(() => {
+    if (!existsSync("./lib")) {
+        execSync("yarn build");
+    }
 
-execSync("cp ./lib/esm/assets/scss/default.scss ../../../../components.config.scss")
+    execSync("cp ./lib/esm/assets/scss/default.scss ../../../../components.config.scss")
+})();
