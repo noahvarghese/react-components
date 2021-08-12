@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Checkbox.scss";
+import "./index.scss";
 
 export interface CheckboxProps {
     name: string;

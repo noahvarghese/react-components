@@ -1,5 +1,5 @@
-// Replace next line with @import "../../../../../../../components.config.scss"
+/* Development variables location */
 @import "../../../default.config.scss";
-@import "./themes.scss";
-@import "./variables.scss";
-@import "./fonts.scss";
+/* Prod variables location */
+/* @import "../../../../../../components.config.scss" */
+@import "./core/";

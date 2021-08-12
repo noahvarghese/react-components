@@ -6,44 +6,22 @@ const fetch = require("node-fetch");
 const newConfigPath = "../../../components.config.scss";
 
 (async () => {
+    // Run only if not part of CI
     if (!fs.existsSync("./lib")) {
-        // cp.execSync("yarn build");
-        console.error("lib does not exist");
-        // process.exit(50);
         return;
     }
 
+    // Copy current stable config to new location for use
     const res = await fetch("https://raw.githubusercontent.com/noahvarghese/react-components/main/default.config.scss");
     const text = await res.text();
-    console.log(text);
-
     fs.writeFileSync(newConfigPath, text);
 
-    const scssFile = path.resolve(__dirname, newConfigPath);
+    // Modify reference to files
+    const importPaths = [path.resolve(__dirname, "../lib/esm/assets/scss/_index.scss"), path.resolve(__dirname, "../lib/cjs/assets/scss/_index.scss")]
 
-    if (!fs.existsSync(scssFile)) {
-        console.error("SCSS config file not found");
-        return;
+    for (let file of importPaths) {
+        // rewrite both files
+        fs.unlinkSync(file);
+        fs.writeFileSync(file, '@import "../../../../../../components.config.scss";\n@import "./core/";\n');
     }
-
-    const contents = fs.readFileSync(scssFile);
-    const newFirstLine = `@import "${newConfigPath};`;
-
-    const rl = readline.createInterface({ input: contents, crlfDelay: Infinity });
-
-    let counter = 0;
-    let newContents = "";
-
-    for await (const line of rl) {
-        if (counter === 1) {
-            newContents += newFirstLine;
-        } else {
-            newContents += line
-        }
-
-        newContents += '\r\n';
-        counter++;
-    }
-
-    fs.writeFileSync(newConfigPath, newContents);
 })();
