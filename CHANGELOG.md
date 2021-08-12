@@ -1,3 +1,18 @@
+# v0.1.28 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- another typo ([@noahvarghese](https://github.com/noahvarghese))
+- typo in script name ([@noahvarghese](https://github.com/noahvarghese))
+- updated package json install script ([@noahvarghese](https://github.com/noahvarghese))
+- copy from github ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.27 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
