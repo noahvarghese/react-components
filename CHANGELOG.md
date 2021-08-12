@@ -1,3 +1,15 @@
+# v0.1.33 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- fixed scss imports and added files to exclude ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.32 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
