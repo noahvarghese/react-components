@@ -6,6 +6,12 @@ html {
     font-size: $_root-font-size;
 }
 
+html,
+* {
+    margin: 0 auto;
+    padding: 0 0;
+}
+
 @media screen and (min-width: 320px) {
     html {
         font-size: calc($_root-font-size + 6 * ((100vw - 320px) / 680));

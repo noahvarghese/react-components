@@ -24,6 +24,14 @@ $_secondary-color: if(
     $secondary-color
 );
 
+$_error-color: if(
+    variable-exists(
+        $name: "default_theme",
+    ),
+    map-get($selected-theme, error-color),
+    $error-color
+);
+
 $_highlight-color: if(
     variable-exists(
         $name: "default_theme",
