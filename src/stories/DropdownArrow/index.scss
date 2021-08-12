@@ -1,0 +1,51 @@
+@import "../../assets/scss/";
+
+.DropdownArrow {
+    cursor: pointer;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+
+    button {
+        position: relative;
+        height: 100%;
+        width: 1.5rem;
+        background-color: transparent;
+        border: none;
+
+        div {
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: $_primary-color;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .first {
+            transform: rotate(45deg);
+            left: 15%;
+        }
+
+        .second {
+            transform: rotate(-45deg);
+            left: 45%;
+        }
+    }
+
+    &.show {
+        .first {
+            transform: rotate(-45deg);
+            left: 15%;
+        }
+
+        .second {
+            transform: rotate(45deg);
+        }
+
+        div {
+            background-color: $_secondary-color;
+        }
+    }
+}
