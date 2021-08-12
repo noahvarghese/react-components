@@ -1,6 +1,6 @@
 // Import fonts to be used
 @function font-path($font, $font-style: "Regular") {
-    @return "../fonts/" + $font + "/" + $font + "-" + $font-style + ".ttf";
+    @return "../../fonts/" + $font + "/" + $font + "-" + $font-style + ".ttf";
 }
 
 @font-face {
