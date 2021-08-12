@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import "./index.scss";
 
 // Need to add in datalist capabilities
+// Need to keep label span on top when there is an error and content and focus is off the element
 
 interface InputProps {
     type: string;
@@ -18,19 +19,18 @@ interface InputProps {
         runOnComplete: boolean;
         runOnInput: boolean;
     },
-    dropdownOptions?: {
-        dataList: { id: number; value: string }[];
-        strict: boolean;
-    },
     errorState?: {
         value: string | undefined;
         setError?: (val?: string | undefined) => void;
-    }
+    },
+    formatter?: (input: any) => any;
 }
 
 const Input: React.FC<InputProps> = (props) => {
     const validate = useCallback(
-        (value: any, run: boolean | undefined) => {
+        (input: any, run: boolean | undefined) => {
+            const value = props.formatter ? props.formatter(input) : input;
+
             if (props.validationOptions && props.errorState && props.errorState.setError && run) {
                 const res = props.validationOptions.validator(value);
                 if (!res.success) {
@@ -43,14 +43,16 @@ const Input: React.FC<InputProps> = (props) => {
             props.state.setState(value);
         },
         [props.validationOptions],
-    )
+    );
+
+
     return (
         <div className="Input">
             <input
                 type={props.type}
                 readOnly={props.readonly}
                 name={props.name}
-                // placeholder={props.placeholder}
+                // this is hardcoded so the animation works
                 required={true}
                 id={props.name}
                 onChange={(e) => {
