@@ -1,3 +1,16 @@
+# v0.1.34 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/noahvarghese/react-components into main ([@noahvarghese](https://github.com/noahvarghese))
+- fixed another import ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.33 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
