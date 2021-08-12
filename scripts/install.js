@@ -3,7 +3,7 @@ const path = require("path");
 const readline = require("readline");
 const fetch = require("node-fetch");
 
-const newConfigPath = "../../../../components.config.scss";
+const newConfigPath = "../../../components.config.scss";
 
 (async () => {
     if (!fs.existsSync("./lib")) {
@@ -27,7 +27,7 @@ const newConfigPath = "../../../../components.config.scss";
     }
 
     const contents = fs.readFileSync(scssFile);
-    const newFirstLine = `@import "${relativePath};`;
+    const newFirstLine = `@import "${newConfigPath};`;
 
     const rl = readline.createInterface({ input: contents, crlfDelay: Infinity });
 
@@ -44,4 +44,6 @@ const newConfigPath = "../../../../components.config.scss";
         newContents += '\r\n';
         counter++;
     }
+
+    fs.writeFileSync(newConfigPath, newContents);
 })();
