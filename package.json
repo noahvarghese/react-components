@@ -24,7 +24,7 @@
         "postbuild": "yarn copy-styles && yarn copy-assets",
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
-        "postinstall": "node ./scritps/install.js",
+        "postinstall": "node ./scripts/install.js",
         "release": "auto shipit --base-branch=main",
         "uninstall": "rm ../../../../components.config.scss"
     },
