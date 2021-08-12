@@ -1,14 +1,16 @@
 @import "../../assets/scss";
 
 .file-input {
+    @import "../../assets/scss/core/defaults.scss";
+
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
     *,
     & {
         background-color: white;
         box-sizing: border-box;
     }
-
-    border-radius: 5px;
-    transition: all 0.3s ease;
 
     label {
         position: relative;
@@ -30,12 +32,12 @@
             content: " ";
             width: 100%;
             height: 100%;
-            border: 2px dashed $_secondary-color;
+            border: 2px dashed $_primary-color;
         }
 
         font-size: 1.2rem;
         transition: all 0.3s ease;
-        color: $_secondary-color;
+        color: $_primary-color;
 
         & > *:not(:last-of-type) {
             margin-bottom: 1rem;
@@ -57,18 +59,19 @@
         &.drag {
             &::after {
                 transform: scale(1.01);
+                border-color: $_secondary-color;
             }
 
-            & {
-                color: $_primary-color;
+            .img-container {
+                transform: scale(1.05);
             }
         }
 
         p {
             margin: 0 0;
-            font-size: 1rem;
+            font-size: calc(#{$_content-font-size} * 0.75) !important;
             text-align: center;
-            color: $_secondary-color;
+            color: $_primary-color;
         }
 
         .img-container {
@@ -76,6 +79,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+
             img {
                 height: 100%;
                 width: auto;
