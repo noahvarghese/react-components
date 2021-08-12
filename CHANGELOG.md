@@ -1,3 +1,15 @@
+# v0.1.26 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- run post install ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.25 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
