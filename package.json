@@ -96,7 +96,7 @@
     "files": [
         "/lib",
         "/scripts",
-        "default.config.scss"
+        "/default.config.scss"
     ],
     "babel": {
         "presets": [
