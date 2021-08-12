@@ -1,3 +1,15 @@
+# v0.1.27 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- removed install script temporarily, added in echo for prepublish to see if it gets called on user install ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.26 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
