@@ -1,3 +1,16 @@
+# v0.1.36 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- forgot to reexport ([@noahvarghese](https://github.com/noahvarghese))
+- added in Input element, and finessed the scss configs a bit ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.35 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
