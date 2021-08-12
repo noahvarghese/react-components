@@ -8,7 +8,7 @@ const newConfigPath = "../../../../components.config.scss";
 (async () => {
     if (!fs.existsSync("./lib")) {
         // cp.execSync("yarn build");
-        // console.error("lib does not exist");
+        console.error("lib does not exist");
         // process.exit(50);
         return;
     }
