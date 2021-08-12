@@ -1,6 +1,6 @@
 import React, { MouseEvent } from "react";
 import { Link, useHistory } from "react-router-dom";
-import "./Button.scss";
+import "./index.scss";
 
 export interface ButtonProps {
     /**
