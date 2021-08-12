@@ -1,3 +1,15 @@
+# v0.1.32 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- adjusted font path ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.31 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
