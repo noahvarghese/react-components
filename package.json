@@ -62,6 +62,7 @@
     "dependencies": {
         "child-process": "^1.0.2",
         "fs": "^0.0.1-security",
+        "node-fetch": "^2.6.1",
         "path": "^0.12.7",
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.3",
