@@ -11,10 +11,12 @@ const newConfigPath = "../../../components.config.scss";
         return;
     }
 
-    // Copy current stable config to new location for use
-    const res = await fetch("https://raw.githubusercontent.com/noahvarghese/react-components/main/default.config.scss");
-    const text = await res.text();
-    fs.writeFileSync(newConfigPath, text);
+    if (!fs.existsSync(newConfigPath)) {
+        // Copy current stable config to new location for use
+        const res = await fetch("https://raw.githubusercontent.com/noahvarghese/react-components/main/default.config.scss");
+        const text = await res.text();
+        fs.writeFileSync(newConfigPath, text);
+    }
 
     // Modify reference to files
     const importPaths = [path.resolve(__dirname, "../lib/esm/assets/scss/_index.scss"), path.resolve(__dirname, "../lib/cjs/assets/scss/_index.scss")]
