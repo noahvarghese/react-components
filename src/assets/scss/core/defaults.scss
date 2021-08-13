@@ -1,8 +1,3 @@
-*,
-& {
-    box-sizing: border-box;
-}
-
 &:not(h1, h2, h3, h4, h5, h6, .button),
 *:not(h1, h2, h3, h4, h5, h6, .button) {
     font-family: $_content-font-family;
