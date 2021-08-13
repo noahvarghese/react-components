@@ -1,3 +1,15 @@
+# v0.1.38 (Thu Aug 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added in formatter ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.37 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
