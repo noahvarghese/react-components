@@ -1,4 +1,4 @@
 export interface ErrorProps {
     value: string | undefined;
-    setError?: (val?: string | undefined) => void;
+    setError: (val?: string | undefined) => void;
 }

@@ -1,21 +1,113 @@
 @import "../../assets/scss/";
 
-.select {
+.select-container {
     @import "../../assets/scss/core/defaults.scss";
     position: relative;
     width: 100%;
-    overflow: hidden;
     height: calc(#{$_content-font-size} * 4);
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+
+    &:focus-within {
+        transform: scale(1.01);
+        div.error-message {
+            top: calc(100% - #{$_content-font-size} + 1px);
+        }
+    }
+
+    &:hover,
+    *:hover {
+        cursor: pointer;
+    }
+
+    select {
+        display: none;
+
+        &:focus + label span,
+        &.selected + label span,
+        &.show + label span,
+        &.has-input + label span {
+            transform: translateY(-150%);
+            font-size: 14px;
+        }
+
+        &:focus + label::after,
+        &.selected + label::after,
+        &.show + label::after,
+        &.has-input + label::after {
+            // transform: translateX(0%);
+            width: 100%;
+        }
+
+        &:focus + label,
+        &.selected + label,
+        &.show + label,
+        &.has-input + label {
+            border: 1px solid transparent;
+            transition-delay: 0.3s;
+        }
+
+        &:not(.error) {
+            &:focus + label span,
+            &.selected + label span,
+            &.show + label,
+            &.has-input + label span {
+                color: $_secondary-color !important;
+            }
+        }
+
+        &.error {
+            &:focus + label span,
+            &.selected + label span,
+            &.show + label,
+            &.has-input + label {
+                color: $_error-color;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        z-index: 2;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    div.option-list {
+        position: absolute;
+        left: 0;
+        width: max-content;
+        max-width: 100%;
+        top: calc(100% - #{$_content-font-size});
+        z-index: 4;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 2px 8px 8px rgba(43, 43, 43, 0.2);
+        background-color: white;
+
+        div.option {
+            padding: 1rem 2rem;
+
+            &:not(:last-of-type) {
+                border-bottom: 3px solid $_secondary-bg-color;
+            }
+        }
+    }
+
+    div.option-list.show {
+        max-height: 100vh;
+    }
 
     label {
+        z-index: 1;
         position: absolute;
         width: 100%;
         height: calc(#{$_content-font-size} * 2);
-        z-index: 1;
 
         left: 0;
         top: 50%;
@@ -33,28 +125,23 @@
             height: min-content;
         }
 
-        &:not(.error) {
-            &::after {
-                border-bottom: 3px solid $_secondary-color;
-            }
+        &:not(.error)::after {
+            border-bottom: 3px solid $_secondary-color;
         }
 
-        &.error {
-            &::after {
-                border-bottom: 3px solid $_error-color;
-            }
+        &.error::after {
+            border-bottom: 3px solid $_error-color;
         }
 
         &::after {
             content: "";
             position: absolute;
             height: 100%;
-            width: 100%;
+            width: 0%;
             left: 0;
             bottom: -1px;
-            transform: translateX(-100%);
+            // transform: translateX(-100%);
             transition: all 0.3s ease;
-            z-index: 2;
         }
     }
 
@@ -65,58 +152,18 @@
         transform: translateY(-50%);
     }
 
-    select {
-        // remove existing arrow
-        appearance: none;
-        // handles removing arrow on older IE versions
-        &::-ms-expand {
-            display: none;
-        }
-        // clear visuals
-        outline: none;
-        background-color: transparent;
-        border: none;
-
-        // adds space for the new arrow
-        padding: 0 1em 0 0;
-
-        width: 100%;
-
-        z-index: 2;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:focus + label span,
-        &.selected + label span {
-            transform: translateY(-150%);
-            font-size: 14px;
-        }
-
-        &:focus + label::after {
-            transform: translateX(0%);
-        }
-
-        &:not(.error) {
-            &:focus + label span {
-                color: $_secondary-color !important;
-            }
-        }
-
-        &.error {
-            &:focus + label span {
-                color: $_error-color;
-            }
-        }
-    }
     .error-message {
         position: absolute;
+        transition: all 0.3s ease;
         top: calc(100% - #{$_content-font-size});
         left: 0;
         padding: 0;
         font-size: calc(#{$_content-font-size} * 0.75);
-        z-index: 10;
         color: $_error-color;
+        z-index: 2;
+
+        * {
+            z-index: 1;
+        }
     }
 }

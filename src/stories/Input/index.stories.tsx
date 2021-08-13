@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import validator from "validator";
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Input from ".";
-// import { useState } from '@storybook/addons';
-
-// export default {
-//     title: "Input",
-//     component: Input,
-// } as ComponentMeta<typeof Input>;
 
 let validatorOptions = {
-    validator: (item: any): { success: true; } | { success: false; errorMessage: string } => {
+    validator: (
+        item: any
+    ): { success: true } | { success: false; errorMessage: string } => {
         let success = false;
         let errorMessage: string;
 
@@ -20,40 +16,50 @@ let validatorOptions = {
 
             return {
                 success,
-                errorMessage: errorMessage ?? undefined
-            }
+                errorMessage: errorMessage ?? undefined,
+            };
         }
 
         const isEmail = validator.isEmail(item);
 
         if (isEmail) {
             success = true;
-        }
-        else {
+        } else {
             errorMessage = "Invalid email address";
         }
 
         return {
             success,
-            errorMessage: errorMessage ?? undefined
-        }
+            errorMessage: errorMessage ?? undefined,
+        };
     },
     runOnComplete: true,
-    runOnInput: false
-}
+    runOnInput: false,
+};
 
 const EmailInput: React.FC = () => {
     const [emailState, setEmail] = useState("");
     const [error, setError] = useState("");
 
-
-    return <Input type="email" required={true} name="email" state={{ setState: setEmail, value: emailState }} validationOptions={validatorOptions} errorState={{ setError: setError, value: error }} placeholder="email" />
-}
+    return (
+        <Input
+            type="email"
+            required={true}
+            name="email"
+            state={{ setState: setEmail, value: emailState }}
+            validationOptions={validatorOptions}
+            errorState={{ setError: setError, value: error }}
+            placeholder="email"
+        />
+    );
+};
 
 export default {
     title: "Input",
-    component: EmailInput
-} as ComponentMeta<typeof EmailInput>
+    component: EmailInput,
+} as ComponentMeta<typeof EmailInput>;
 
-const Template: ComponentStory<typeof EmailInput> = (args) => <EmailInput {...args} />
+const Template: ComponentStory<typeof EmailInput> = (args) => (
+    <EmailInput {...args} />
+);
 export const Email = Template.bind({});
