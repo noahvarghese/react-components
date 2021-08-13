@@ -1,12 +1,18 @@
 @import "../../assets/scss/";
 
 .DropdownArrow {
-    cursor: pointer;
+    @import "../../assets/scss/core/defaults.scss";
     width: 2rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease-in-out;
+
+    &,
+    * {
+        cursor: pointer;
+    }
 
     button {
         position: relative;

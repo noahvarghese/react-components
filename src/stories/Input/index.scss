@@ -1,6 +1,7 @@
 @import "../../assets/scss/";
 
 div.Input {
+    @import "../../assets/scss/core/defaults.scss";
     position: relative;
     height: calc(#{$_content-font-size} * 4);
 

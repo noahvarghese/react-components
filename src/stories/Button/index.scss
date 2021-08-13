@@ -2,23 +2,14 @@
 
 a.button,
 button.button {
+    @import "../../assets/scss/core/defaults.scss";
     border-radius: 5px;
     box-shadow: 4px 8px 8px rgba(43.9, 43.9, 43.9, 0.2);
     transition: all 0.3s ease;
     outline: none;
     text-align: center;
+    font-size: $_content-font-size;
     text-transform: uppercase;
-    font-family: $_header-font-family;
-    letter-spacing: $_header-letter-spacing;
-
-    &::after {
-        content: $_header-font-family;
-    }
-
-    *,
-    & {
-        box-sizing: border-box;
-    }
 
     &:not(:disabled) {
         border: none;
@@ -67,12 +58,5 @@ button.button {
         transform: scale(1.01);
         box-shadow: 4px 8px 10px rgba(43.9, 43.9, 43.9, 0.5);
         cursor: pointer;
-    }
-
-    @media only screen and (min-width: 1367px) {
-        font-size: 1rem;
-    }
-    @media only screen and (max-width: 1366px) {
-        font-size: 0.9rem;
     }
 }
