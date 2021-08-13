@@ -30,26 +30,30 @@ div.Input {
         height: calc(#{$_content-font-size} * 2);
 
         &:focus + label span,
-        &:valid + label span {
+        &:valid + label span,
+        &.has-input + label span {
             transform: translateY(-150%);
             font-size: 14px;
         }
 
         &:focus + label::after,
-        &:valid + label::after {
+        &:valid + label::after,
+        &.has-input + label::after {
             transform: translateX(0%);
         }
 
         &:not(.error) {
             &:focus + label span,
-            &:valid + label span {
+            &:valid + label span,
+            &.has-input + label span {
                 color: $_secondary-color !important;
             }
         }
 
         &.error {
             &:focus + label span,
-            &:valid + label span {
+            &:valid + label span,
+            &.has-input + label span {
                 color: $_error-color;
             }
         }

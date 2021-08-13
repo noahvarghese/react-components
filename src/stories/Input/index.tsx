@@ -1,4 +1,7 @@
 import React, { useCallback } from 'react';
+import { ErrorProps } from '../../types/error';
+import { StateProps } from '../../types/state';
+import { ValidationProps } from '../../types/validation';
 import "./index.scss";
 
 // Need to add in datalist capabilities
@@ -10,19 +13,9 @@ interface InputProps {
     placeholder: string;
     required: boolean;
     readonly?: boolean;
-    state: {
-        value: any;
-        setState: (val: any) => void;
-    },
-    validationOptions?: {
-        validator: (input: any) => { success: true; } | { success: false; errorMessage: string };
-        runOnComplete: boolean;
-        runOnInput: boolean;
-    },
-    errorState?: {
-        value: string | undefined;
-        setError?: (val?: string | undefined) => void;
-    },
+    state: StateProps,
+    validationOptions?: ValidationProps,
+    errorState?: ErrorProps,
     formatter?: (input: any) => any;
 }
 
@@ -63,7 +56,7 @@ const Input: React.FC<InputProps> = (props) => {
                     validate(e.currentTarget.value, props.validationOptions?.runOnComplete);
                     console.log("blur");
                 }}
-                className={props.errorState && props.errorState.value ? "error" : ""}
+                className={(props.errorState && props.errorState.value ? "error" : "") + (props.state.value !== "" ? " has-input" : "")}
                 value={props.state.value}
             />
             <label htmlFor={props.name} className={props.errorState && props.errorState.value ? "error" : ""}>
