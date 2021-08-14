@@ -2,29 +2,6 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Select from ".";
-import { ValidationProps } from "../../types/validation";
-
-let validatorOptions: ValidationProps = {
-    validator: (
-        item: any,
-        options: { id: number; value: any }[]
-    ): { success: true } | { success: false; errorMessage: string } => {
-        if (!item) {
-            return { success: false, errorMessage: "Field cannot be blank" };
-        }
-
-        if (options.find(({ value }) => value === item)) {
-            return { success: true };
-        }
-
-        return {
-            success: false,
-            errorMessage: "Invalid selection",
-        };
-    },
-    runOnInput: false,
-    runOnComplete: true,
-};
 
 const DeptSelect: React.FC = () => {
     const [selected, setSelected] = useState({ id: -1, value: "" });

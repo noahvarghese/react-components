@@ -53,7 +53,7 @@ const FileInput: React.FC<FileInputProps> = (props) => {
     );
 
     return (
-        <div className="file-input">
+        <div className="file-input-container FileInput">
             <label
                 htmlFor={props.name}
                 className={dragged ? "drag" : ""}

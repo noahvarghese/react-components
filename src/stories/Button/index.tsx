@@ -26,6 +26,12 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     const location = useHistory();
     const mode = primary ? "button--primary" : "button--secondary";
+    const className = [
+        "Button",
+        "button-container",
+        `button--${size}`,
+        mode,
+    ].join(" ");
 
     if (props.link) {
         if (props.link !== location.location.pathname) {
@@ -33,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({
                 <Link
                     onClick={props.onClick}
                     to={props.link}
-                    className={["button", `button--${size}`, mode].join(" ")}
+                    className={className}
                 >
                     {props.text}
                 </Link>
@@ -45,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
         return (
             <button
                 onClick={props.onClick}
-                className={["button", `button--${size}`, mode].join(" ")}
+                className={className}
                 disabled={props.disabled}
                 type={type}
             >

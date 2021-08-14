@@ -1,6 +1,6 @@
 @import "../../assets/scss/";
 
-div.Input {
+div.input-container {
     @import "../../assets/scss/core/defaults.scss";
     position: relative;
     height: calc(#{$_content-font-size} * 4);
@@ -14,6 +14,14 @@ div.Input {
     min-width: 200px;
     max-width: 95%;
     overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:focus-within {
+        transform: scale(1.01);
+        div.error-message {
+            top: calc(100% - #{$_content-font-size} + 1px);
+        }
+    }
 
     * {
         font-family: $_content-font-family;
@@ -109,5 +117,6 @@ div.Input {
         font-size: calc(#{$_content-font-size} * 0.75);
         z-index: 10;
         color: $_error-color;
+        transition: all 0.3s ease;
     }
 }

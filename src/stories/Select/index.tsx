@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useState } from "react";
 import { ErrorProps } from "../../types/error";
 import { StateProps } from "../../types/state";
@@ -19,6 +19,53 @@ const Select: React.FC<SelectProps> = (props) => {
     const [selectRef, setSelectRef] = useState<HTMLSelectElement | null>(null);
     const [inputRef, setInputRef] = useState<HTMLInputElement | null>(null);
     const [inputVal, setInputVal] = useState("");
+
+    const validate = useCallback(
+        (key: string) => {
+            if (inputRef) {
+                if (key === "Enter" || key === "Escape") {
+                    inputRef.blur();
+                    const item = props.items.find(({ value }) =>
+                        (value as string)
+                            .toLowerCase()
+                            .includes(inputRef.value.toLowerCase())
+                    );
+                    inputRef.value = item ? (item.value as string) : "";
+                    props.state.setState(item);
+
+                    return;
+                }
+
+                const val =
+                    key.length === 1
+                        ? inputRef.value + key
+                        : key === "Backspace"
+                        ? inputRef.value.substring(0, inputRef.value.length - 1)
+                        : inputRef.value;
+
+                setInputVal(val);
+
+                if (val === "" && props.required && props.errorState) {
+                    props.errorState.setError("Field cannot be left empty");
+                    return;
+                }
+
+                const item = props.items.find(({ value }) =>
+                    (value as string).toLowerCase().includes(val.toLowerCase())
+                );
+
+                if (props.errorState) {
+                    if (item === undefined) {
+                        props.errorState.setError("Invalid entry");
+                        return;
+                    } else {
+                        props.errorState.setError("");
+                    }
+                }
+            }
+        },
+        [inputRef, props.errorState, props.required, props.items, props.state]
+    );
 
     return (
         <div
@@ -51,9 +98,27 @@ const Select: React.FC<SelectProps> = (props) => {
                     <div
                         className={
                             (props.state.value === value ? "selected " : "") +
+                            (inputVal === "" ||
+                            (value as string)
+                                .toLowerCase()
+                                .includes(inputVal.toLowerCase())
+                                ? "visible "
+                                : "") +
                             "option"
                         }
                         key={id}
+                        onClick={(e) => {
+                            props.state.setState(
+                                props.items.find(
+                                    ({ value }) =>
+                                        (value as string) ===
+                                        e.currentTarget.innerText
+                                )
+                            );
+                            inputRef?.blur();
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }}
                     >
                         {value}
                     </div>
@@ -62,39 +127,13 @@ const Select: React.FC<SelectProps> = (props) => {
             <input
                 type="text"
                 ref={setInputRef}
-                defaultValue=""
+                defaultValue={props.state.value.value}
                 onKeyDown={(e) => {
                     if (e.key === "Escape" && inputRef) {
                         inputRef.blur();
                     }
 
-                    const val =
-                        e.currentTarget.value +
-                        (e.key.length === 1
-                            ? e.key
-                            : e.key === "Backspace"
-                            ? e.currentTarget.value.substring(
-                                  0,
-                                  e.currentTarget.value.length - 2
-                              )
-                            : "");
-                    setInputVal(val);
-
-                    if (val === "" && props.required && props.errorState) {
-                        props.errorState.setError("Field cannot be left empty");
-                        return;
-                    }
-
-                    const item = props.items.find(({ value }) => value === val);
-
-                    if (props.errorState) {
-                        if (item === undefined) {
-                            props.errorState.setError("Invalid entry");
-                            return;
-                        } else {
-                            props.errorState.setError("");
-                        }
-                    }
+                    validate(e.key);
                 }}
             />
             <select
@@ -110,6 +149,7 @@ const Select: React.FC<SelectProps> = (props) => {
                     (props.state.value.value !== "" ? "selected" : "")
                 }
             >
+                {/* Add empty first option that cannot be reselected */}
                 {[{ id: -1, value: "" }, ...props.items].map(
                     ({ id, value }, index) => (
                         <option

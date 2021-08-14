@@ -93,6 +93,10 @@
         div.option {
             padding: 1rem 2rem;
 
+            &:not(.visible) {
+                display: none;
+            }
+
             &:not(:last-of-type) {
                 border-bottom: 3px solid $_secondary-bg-color;
             }

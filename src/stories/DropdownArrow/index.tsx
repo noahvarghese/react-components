@@ -22,16 +22,14 @@ const DropdownArrow: React.FC<DropdownArrowProps> = (props) => {
 
     return (
         <div
-            className={`${display ? "show " : ""}DropdownArrow`}
+            className={`${
+                display ? "show " : ""
+            }DropdownArrow dropdown-arrow-container`}
             onClick={onClick}
         >
             <button onClick={onClick}>
-                <div
-                    className="first"
-                ></div>
-                <div
-                    className="second"
-                ></div>
+                <div className="first"></div>
+                <div className="second"></div>
             </button>
         </div>
     );
