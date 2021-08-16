@@ -140,28 +140,30 @@ const Select: React.FC<SelectProps> = (props) => {
                 onKeyDown={(e) => {
                     // handles scrolling
                     if (e.key === "ArrowDown") {
-                        console.log(e.key);
-                        const currentIndex = props.state.value.id;
+                        const currentIndex = props.items.indexOf(
+                            props.items.find(
+                                ({ value }) => value === props.state.value.value
+                            )!
+                        );
 
-                        if (currentIndex === props.items.length) {
+                        if (currentIndex >= props.items.length - 1) {
                             props.state.setState(props.items[0]);
                         } else {
-                            props.state.setState(
-                                props.items[props.state.value.id + 1]
-                            );
+                            props.state.setState(props.items[currentIndex + 1]);
                         }
                     } else if (e.key === "ArrowUp") {
-                        console.log(e.key);
-                        const currentIndex = props.state.value.id;
+                        const currentIndex = props.items.indexOf(
+                            props.items.find(
+                                ({ value }) => value === props.state.value.value
+                            )!
+                        );
 
-                        if (currentIndex < 1) {
+                        if (currentIndex <= 0) {
                             props.state.setState(
                                 props.items[props.items.length - 1]
                             );
                         } else {
-                            props.state.setState(
-                                props.items[props.state.value.id - 1]
-                            );
+                            props.state.setState(props.items[currentIndex - 1]);
                         }
                     } else if (
                         e.key === "Enter" ||
