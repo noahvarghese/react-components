@@ -27,7 +27,7 @@
         display: none;
 
         &:focus + label span,
-        &.selected + label span,
+        &.has-selected + label span,
         &.show + label span,
         &.has-input + label span {
             transform: translateY(-150%);
@@ -35,7 +35,7 @@
         }
 
         &:focus + label::after,
-        &.selected + label::after,
+        &.has-selected + label::after,
         &.show + label::after,
         &.has-input + label::after {
             // transform: translateX(0%);
@@ -43,16 +43,15 @@
         }
 
         &:focus + label,
-        &.selected + label,
+        &.has-selected + label,
         &.show + label,
         &.has-input + label {
             border: 1px solid transparent;
-            transition-delay: 0.3s;
         }
 
         &:not(.error) {
             &:focus + label span,
-            &.selected + label span,
+            &.has-selected + label span,
             &.show + label,
             &.has-input + label span {
                 color: $_secondary-color !important;
@@ -61,7 +60,7 @@
 
         &.error {
             &:focus + label span,
-            &.selected + label span,
+            &.has-selected + label span,
             &.show + label,
             &.has-input + label {
                 color: $_error-color;
@@ -75,36 +74,6 @@
         background-color: transparent;
         border: none;
         outline: none;
-    }
-
-    div.option-list {
-        position: absolute;
-        left: 0;
-        width: max-content;
-        max-width: 100%;
-        top: calc(100% - #{$_content-font-size});
-        z-index: 4;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 2px 8px 8px rgba(43, 43, 43, 0.2);
-        background-color: white;
-
-        div.option {
-            padding: 1rem 2rem;
-
-            &:not(.visible) {
-                display: none;
-            }
-
-            &:not(:last-of-type) {
-                border-bottom: 3px solid $_secondary-bg-color;
-            }
-        }
-    }
-
-    div.option-list.show {
-        max-height: 100vh;
     }
 
     label {

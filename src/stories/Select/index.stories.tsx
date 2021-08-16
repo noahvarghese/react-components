@@ -12,6 +12,7 @@ const DeptSelect: React.FC = () => {
             items={[
                 { id: 1, value: "Kitchen" },
                 { id: 2, value: "Bar" },
+                { id: 3, value: "YOLO" },
             ]}
             name="department"
             placeholder="department"

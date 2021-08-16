@@ -1,9 +1,12 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 import { ErrorProps } from "../../types/error";
+import { stopBubbling } from "../../util/error";
 import { StateProps } from "../../types/state";
 import DropdownArrow from "../DropdownArrow";
 import "./index.scss";
+import OptionList from "./Option";
+import { useMemo } from "react";
 
 interface SelectProps {
     name: string;
@@ -11,81 +14,106 @@ interface SelectProps {
     items: { id: number; value: any }[];
     required: boolean;
     errorState?: ErrorProps;
-    state: StateProps;
+    // here value will
+    state: StateProps<{ id: number; value: string }>;
 }
 
 const Select: React.FC<SelectProps> = (props) => {
+    // sets whether the dropdown is displayed as well as arrow state
     const [open, setOpen] = useState(false);
+    // reference to HTMLSelectElement
     const [selectRef, setSelectRef] = useState<HTMLSelectElement | null>(null);
+    // reference to HTMLInputElement
     const [inputRef, setInputRef] = useState<HTMLInputElement | null>(null);
-    const [inputVal, setInputVal] = useState("");
+    // HTMLInputElement value
+    const [inputValue, setInputValue] = useState("");
 
-    const validate = useCallback(
-        (key: string) => {
+    const setInput = useCallback(
+        (newVal: string) => {
             if (inputRef) {
-                if (key === "Enter" || key === "Escape") {
-                    inputRef.blur();
-                    const item = props.items.find(({ value }) =>
-                        (value as string)
-                            .toLowerCase()
-                            .includes(inputRef.value.toLowerCase())
-                    );
-                    inputRef.value = item ? (item.value as string) : "";
-                    props.state.setState(item);
+                setInputValue(newVal);
+                inputRef.value = newVal;
+            }
+        },
+        [inputRef, setInputValue]
+    );
 
-                    return;
-                }
+    // controls main classes
+    const selectClassName = useMemo(() => {
+        const classes = [];
 
-                const val =
-                    key.length === 1
-                        ? inputRef.value + key
-                        : key === "Backspace"
-                        ? inputRef.value.substring(0, inputRef.value.length - 1)
-                        : inputRef.value;
+        if (props.errorState && props.errorState.value) classes.push("error");
+        if (open) classes.push("show");
+        if (inputRef?.value !== "") classes.push("has-input");
+        if (props.state.value.value !== "") classes.push("has-selected");
 
-                setInputVal(val);
+        return classes.join(" ");
+    }, [props.errorState, inputRef, props.state, open]);
 
-                if (val === "" && props.required && props.errorState) {
+    // gets called when typing or on blur
+    const checkForErrors = useCallback(
+        (newVal?: string): boolean => {
+            if (props.errorState) {
+                const val = newVal ?? inputRef?.value ?? "";
+                if (props.required && val === "") {
                     props.errorState.setError("Field cannot be left empty");
-                    return;
+                    return false;
                 }
 
                 const item = props.items.find(({ value }) =>
                     (value as string).toLowerCase().includes(val.toLowerCase())
                 );
 
-                if (props.errorState) {
-                    if (item === undefined) {
-                        props.errorState.setError("Invalid entry");
-                        return;
-                    } else {
-                        props.errorState.setError("");
-                    }
+                if (item === undefined) {
+                    props.errorState.setError("Invalid entry");
+                    return false;
+                } else {
+                    props.errorState.setError("");
+                    return true;
                 }
             }
+            return true;
         },
-        [inputRef, props.errorState, props.required, props.items, props.state]
+        [props.errorState, props.items, props.required, inputRef]
     );
+
+    // gets called on click
+    const optionClicked = useCallback(
+        (item: { id: number; value: string }) => {
+            props.state.setState(item);
+            props.errorState?.setError("");
+            setInput(item.value);
+            setOpen(false);
+            inputRef?.blur();
+        },
+        [setInput, props.state, props.errorState, inputRef]
+    );
+
+    useEffect(() => {
+        setInput(props.state.value.value);
+        if (selectRef) {
+            if (props.state.value.id > 0) {
+                selectRef.selectedIndex = props.state.value.id;
+            } else {
+                selectRef.selectedIndex = 0;
+            }
+        }
+    }, [props.state.value, setInput, selectRef]);
 
     return (
         <div
             className="Select select-container"
             onClick={(e) => {
-                if (!open) {
-                    inputRef?.focus();
-                }
-                e.preventDefault();
-                e.stopPropagation();
+                if (!open) inputRef?.focus();
+                stopBubbling(e);
             }}
             onFocus={(e) => {
                 setOpen(true);
-                e.preventDefault();
-                e.stopPropagation();
+                stopBubbling(e);
             }}
             onBlur={(e) => {
                 setOpen(false);
-                e.preventDefault();
-                e.stopPropagation();
+                stopBubbling(e);
             }}
         >
             {props.errorState && props.errorState.value && (
@@ -93,61 +121,90 @@ const Select: React.FC<SelectProps> = (props) => {
                     <p>{props.errorState.value}</p>
                 </div>
             )}
-            <div className={(open ? "show " : "") + "option-list"}>
-                {props.items.map(({ id, value }) => (
-                    <div
-                        className={
-                            (props.state.value === value ? "selected " : "") +
-                            (inputVal === "" ||
-                            (value as string)
-                                .toLowerCase()
-                                .includes(inputVal.toLowerCase())
-                                ? "visible "
-                                : "") +
-                            "option"
-                        }
-                        key={id}
-                        onClick={(e) => {
-                            props.state.setState(
-                                props.items.find(
-                                    ({ value }) =>
-                                        (value as string) ===
-                                        e.currentTarget.innerText
-                                )
-                            );
-                            inputRef?.blur();
-                            e.preventDefault();
-                            e.stopPropagation();
-                        }}
-                    >
-                        {value}
-                    </div>
-                ))}
-            </div>
+
+            <OptionList
+                items={props.items}
+                selected={{
+                    id: props.state.value.id,
+                    value: props.state.value.value,
+                }}
+                inputValue={inputValue}
+                visible={open}
+                setSelected={optionClicked}
+            />
+
             <input
                 type="text"
                 ref={setInputRef}
-                defaultValue={props.state.value.value}
+                defaultValue={inputValue}
                 onKeyDown={(e) => {
-                    if (e.key === "Escape" && inputRef) {
-                        inputRef.blur();
-                    }
+                    // handles scrolling
+                    if (e.key === "ArrowDown") {
+                        console.log(e.key);
+                        const currentIndex = props.state.value.id;
 
-                    validate(e.key);
+                        if (currentIndex === props.items.length) {
+                            props.state.setState(props.items[0]);
+                        } else {
+                            props.state.setState(
+                                props.items[props.state.value.id + 1]
+                            );
+                        }
+                    } else if (e.key === "ArrowUp") {
+                        console.log(e.key);
+                        const currentIndex = props.state.value.id;
+
+                        if (currentIndex < 1) {
+                            props.state.setState(
+                                props.items[props.items.length - 1]
+                            );
+                        } else {
+                            props.state.setState(
+                                props.items[props.state.value.id - 1]
+                            );
+                        }
+                    } else if (
+                        e.key === "Enter" ||
+                        e.key === "Escape" ||
+                        e.key === "Tab"
+                    ) {
+                        // handles end validation
+                        inputRef?.blur();
+
+                        if (checkForErrors()) {
+                            props.state.setState(
+                                // checks for the first closest match
+                                props.items.find((item) =>
+                                    item.value
+                                        .trim()
+                                        .toLowerCase()
+                                        .includes(
+                                            inputValue.trim().toLowerCase()
+                                        )
+                                )!
+                            );
+                        }
+                    } else if (e.key.length === 1) {
+                        setInputValue(inputValue + e.key);
+                        checkForErrors(inputValue + e.key);
+                    } else if (e.key === "Backspace") {
+                        const currentVal = inputValue.substring(
+                            0,
+                            inputValue.length - 1
+                        );
+                        setInputValue(currentVal);
+                        checkForErrors(currentVal);
+                        if (props.state.value.value !== "") {
+                            props.state.setState({ id: -1, value: "" });
+                        }
+                    }
                 }}
             />
             <select
                 ref={setSelectRef}
-                defaultValue=""
+                defaultValue={props.state.value.value}
                 name={props.name}
-                className={
-                    (props.errorState && props.errorState.value
-                        ? "error "
-                        : "") +
-                    (open ? "show " : "") +
-                    (inputVal.trim() !== "" ? "has-input " : "") +
-                    (props.state.value.value !== "" ? "selected" : "")
-                }
+                className={selectClassName}
             >
                 {/* Add empty first option that cannot be reselected */}
                 {[{ id: -1, value: "" }, ...props.items].map(
@@ -174,9 +231,8 @@ const Select: React.FC<SelectProps> = (props) => {
             <DropdownArrow
                 show={open}
                 onClick={(e) => {
-                    e.stopPropagation();
-                    e.preventDefault();
                     setOpen(!open);
+                    stopBubbling(e);
                 }}
             />
         </div>

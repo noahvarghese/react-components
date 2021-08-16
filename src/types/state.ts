@@ -1,4 +1,4 @@
-export interface StateProps {
-    value: any;
-    setState: (val: any) => void;
+export interface StateProps<T> {
+    value: T;
+    setState: (val: T) => void;
 }
