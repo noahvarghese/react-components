@@ -1,3 +1,31 @@
+# v0.1.39 (Tue Aug 17 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added in RadioFieldset ([@noahvarghese](https://github.com/noahvarghese))
+- added in id to radio ([@noahvarghese](https://github.com/noahvarghese))
+- updated state props in other components ([@noahvarghese](https://github.com/noahvarghese))
+- finally got the select component working ([@noahvarghese](https://github.com/noahvarghese))
+- gotta fix the arrow key selector function thingy ([@noahvarghese](https://github.com/noahvarghese))
+- got the select function working correctly ([@noahvarghese](https://github.com/noahvarghese))
+- got the select dropdown showing, need to add in setting of the 'selected item' on click, on enter, and on escape if 'text' matches ([@noahvarghese](https://github.com/noahvarghese))
+- forgot to remove echo ([@noahvarghese](https://github.com/noahvarghese))
+- development of Select component ([@noahvarghese](https://github.com/noahvarghese))
+- exported new components ([@noahvarghese](https://github.com/noahvarghese))
+- moved out prop types to own files ([@noahvarghese](https://github.com/noahvarghese))
+- merged duplicate css ([@noahvarghese](https://github.com/noahvarghese))
+- added support for invalid states with content ([@noahvarghese](https://github.com/noahvarghese))
+- forgot to add in the default scss, some stylistic modifications ([@noahvarghese](https://github.com/noahvarghese))
+- started select component ([@noahvarghese](https://github.com/noahvarghese))
+- Merge branch 'main' of https://github.com/noahvarghese/react-components into main ([@noahvarghese](https://github.com/noahvarghese))
+- added dropdown arrow ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.38 (Thu Aug 12 2021)
 
 #### ⚠️ Pushed to `main`
