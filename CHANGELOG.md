@@ -1,3 +1,16 @@
+# v0.1.40 (Tue Aug 17 2021)
+
+#### ⚠️ Pushed to `main`
+
+- moved them back to the components folder ([@noahvarghese](https://github.com/noahvarghese))
+- forgot exports and moved components to root src folder ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.39 (Tue Aug 17 2021)
 
 #### ⚠️ Pushed to `main`
