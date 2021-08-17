@@ -1,5 +1,5 @@
 import React from "react";
-import { stopBubbling } from "../../../util/error";
+import { stopBubbling } from "../../util/error";
 import "./index.scss";
 
 interface OptionListProps {

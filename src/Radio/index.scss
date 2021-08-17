@@ -1,7 +1,7 @@
-@import "../../assets/scss";
+@import "../assets/scss";
 
-.checkbox {
-    @import "../../assets/scss/core/defaults.scss";
+.radio-container {
+    @import "../assets/scss/defaults.scss";
     position: relative;
     *,
     & {
@@ -14,7 +14,7 @@
         transform: scale(1.01);
     }
 
-    input[type="checkbox"] {
+    input[type="radio"] {
         opacity: 0;
         position: absolute;
 
@@ -30,12 +30,10 @@
             text-align: center;
             overflow: hidden;
 
-            background-image: linear-gradient(
-                $_secondary-color,
-                $_secondary-color
-            );
+            background-image: linear-gradient($_secondary-color, $_secondary-color);
             background-position: 52% 52%;
             background-repeat: no-repeat;
+            border-radius: 50%;
             background-size: 0% 0%;
 
             transition: background-size 0.1s ease;
@@ -52,7 +50,7 @@
         position: relative;
     }
 
-    input[type="checkbox"],
+    input[type="radio"],
     label {
         font-size: 1.2rem;
         display: inline-block;

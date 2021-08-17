@@ -1,7 +1,7 @@
-@import "../../../assets/scss/";
+@import "../../assets/scss/";
 
 div.option-list-container {
-    @import "../../../assets/scss/core/defaults.scss";
+    @import "../../assets/scss/defaults.scss";
     position: absolute;
     left: 0;
     width: max-content;

@@ -1,10 +1,9 @@
-// visual components 
-export { default as Button } from "./stories/Button/";
-export { default as Checkbox } from "./stories/Checkbox";
-export { default as FileInput } from "./stories/FileInput";
-export { default as Input } from "./stories/Input";
-export { default as DropdownArrow } from "./stories/DropdownArrow";
-export { default as Select } from "./stories/Select";
-
-// behavioural components (or components that are not visible)
-export { default as ProtectedRoute } from "./components/ProtectedRoute";
+export { default as Button } from "./Button/";
+export { default as Checkbox } from "./Checkbox";
+export { default as DropdownArrow } from "./DropdownArrow";
+export { default as FileInput } from "./FileInput";
+export { default as Input } from "./Input";
+export { default as ProtectedRoute } from "./ProtectedRoute";
+export { default as Radio } from "./Radio";
+export { default as RadioFieldset } from "./RadioFieldset";
+export { default as Select } from "./Select";
