@@ -13,7 +13,7 @@ interface InputProps {
     placeholder: string;
     required: boolean;
     readonly?: boolean;
-    state: StateProps;
+    state: StateProps<string>;
     validationOptions?: ValidationProps;
     errorState?: ErrorProps;
     formatter?: (input: any) => any;

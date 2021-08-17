@@ -4,8 +4,9 @@ import "./index.scss";
 
 export interface RadioProps {
     name: string;
+    id: string;
     label?: string;
-    state: StateProps;
+    state: StateProps<boolean>;
     readonly?: boolean;
 }
 
