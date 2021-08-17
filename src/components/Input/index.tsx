@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
-import { ErrorProps } from "../types/error";
-import { StateProps } from "../types/state";
-import { ValidationProps } from "../types/validation";
+import { ErrorProps } from "../../types/error";
+import { StateProps } from "../../types/state";
+import { ValidationProps } from "../../types/validation";
 import "./index.scss";
 
 // Need to add in datalist capabilities

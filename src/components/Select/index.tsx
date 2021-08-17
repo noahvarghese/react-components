@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
-import { ErrorProps } from "../types/error";
-import { stopBubbling } from "../util/error";
-import { StateProps } from "../types/state";
+import { ErrorProps } from "../../types/error";
+import { stopBubbling } from "../../util/error";
+import { StateProps } from "../../types/state";
 import DropdownArrow from "../DropdownArrow";
 import "./index.scss";
 import OptionList from "./Option";

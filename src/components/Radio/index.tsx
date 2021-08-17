@@ -1,5 +1,5 @@
 import React from "react";
-import { StateProps } from "../types/state";
+import { StateProps } from "../../types/state";
 import "./index.scss";
 
 export interface RadioProps {

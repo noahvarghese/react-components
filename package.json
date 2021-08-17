@@ -14,7 +14,7 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "copy-assets": "cp -R src/assets lib/cjs && cp -R src/assets lib/esm",
-        "copy-styles": "copyfiles -u 1 src/stories/**/*.scss lib/cjs && copyfiles  -u 1 src/stories/**/*.scss lib/esm",
+        "copy-styles": "copyfiles -u 1 src/components/**/*.scss lib/cjs && copyfiles  -u 1 src/components/**/*.scss lib/esm",
         "declaration": "./node_modules/.bin/tsc -p .",
         "prepublish": "yarn declaration",
         "prebuild": "rm -rf lib",
