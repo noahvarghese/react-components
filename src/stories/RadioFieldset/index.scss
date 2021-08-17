@@ -1,0 +1,10 @@
+@import "../../assets/scss/";
+
+.radio-fieldset-container {
+    @import "../../assets/scss/core/defaults.scss";
+    border: none;
+
+    legend {
+        margin-bottom: 1rem;
+    }
+}
