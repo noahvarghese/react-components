@@ -1,0 +1,11 @@
+@import "../../assets/scss/";
+
+.form-containr {
+    @import "../../assets/scss/defaults.scss";
+
+    &.card {
+        background-color: $_bg-color;
+        border-radius: 2rem;
+        box-shadow: 4px 8px 8px rgba(44, 44, 44, 0.2);
+    }
+}
