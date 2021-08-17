@@ -3,7 +3,6 @@ import "./index.scss";
 
 export interface CheckboxProps {
     name: string;
-    id: string;
     label?: string;
     checked?: boolean;
     readonly?: boolean;

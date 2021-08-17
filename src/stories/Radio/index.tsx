@@ -15,7 +15,7 @@ const Radio: React.FC<RadioProps> = (props) => {
         <div className="Radio radio-container">
             <input
                 type="radio"
-                id={props.name}
+                id={props.id}
                 name={props.name}
                 checked={props.state.value}
                 onChange={(_) => {
@@ -25,7 +25,7 @@ const Radio: React.FC<RadioProps> = (props) => {
                 }}
                 readOnly={props.readonly}
             />
-            <label htmlFor={props.name}>{props.label ?? props.name}</label>
+            <label htmlFor={props.id}>{props.label ?? props.name}</label>
         </div>
     );
 };
