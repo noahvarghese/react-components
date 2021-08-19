@@ -65,6 +65,7 @@
         "fs": "^0.0.1-security",
         "node-fetch": "^2.6.1",
         "path": "^0.12.7",
+        "react-responsive": "*",
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.3",
         "sass": "^1.37.5",

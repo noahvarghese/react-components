@@ -1,0 +1,59 @@
+@import "../../assets/scss/";
+
+.hamburger-toggle-container {
+    @import "../../assets/scss/defaults.scss";
+    position: absolute;
+    left: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @media only screen and (min-width: 401px) {
+        top: 0;
+        width: 2.75rem;
+        height: 2.25rem;
+        margin-top: 1.38rem;
+        margin-bottom: 1.38rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 2.25rem;
+        height: 1.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &:not(.open) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &.open {
+        div {
+            position: absolute;
+        }
+        .first {
+            transform: rotate(45deg);
+        }
+
+        .second {
+            opacity: 0;
+        }
+
+        .third {
+            transform: rotate(-45deg);
+        }
+    }
+
+    div {
+        width: 100%;
+        height: 0.25rem;
+        background-color: $_secondary-color;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+}

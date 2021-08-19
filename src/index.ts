@@ -2,6 +2,7 @@ export { default as Button } from "./components/Button";
 export { default as Checkbox } from "./components/Checkbox";
 export { default as DropdownArrow } from "./components/DropdownArrow";
 export { default as FileInput } from "./components/FileInput";
+export { default as HamburgerToggle } from "./components/HamburgerToggle";
 export { default as Input } from "./components/Input";
 export { default as ProtectedRoute } from "./components/ProtectedRoute";
 export { default as Radio } from "./components/Radio";
