@@ -3,16 +3,11 @@
 div.input-container {
     @import "../../assets/scss/defaults.scss";
     position: relative;
-    height: calc(#{$_content-font-size} * 4);
-
     flex-wrap: nowrap;
     display: flex;
-    align-items: center;
     justify-content: center;
-
     width: 100%;
     min-width: 200px;
-    max-width: 95%;
     overflow: hidden;
     transition: all 0.3s ease;
 
@@ -25,6 +20,22 @@ div.input-container {
 
     * {
         font-family: $_content-font-family;
+    }
+
+    &:not(.error) {
+        align-items: flex-end;
+        height: calc(#{$_content-font-size} * 3);
+    }
+
+    &.error {
+        align-items: center;
+        height: calc(#{$_content-font-size} * 4);
+
+        label {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 
     input {
@@ -69,9 +80,6 @@ div.input-container {
 
     label {
         position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
         width: 100%;
         height: calc(#{$_content-font-size} * 2);
         pointer-events: none;

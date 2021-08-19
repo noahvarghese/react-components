@@ -43,7 +43,12 @@ const Input: React.FC<InputProps> = (props) => {
     );
 
     return (
-        <div className="Input input-container">
+        <div
+            className={
+                (props.errorState && props.errorState.value ? "error " : "") +
+                "Input input-container"
+            }
+        >
             <input
                 type={props.type}
                 readOnly={props.readonly}

@@ -1,5 +1,5 @@
-&:not(h1, h2, h3, h4, h5, h6, .button),
-*:not(h1, h2, h3, h4, h5, h6, .button) {
+&:not(h1, h2, h3, h4, h5, h6),
+*:not(h1, h2, h3, h4, h5, h6) {
     font-family: $_content-font-family;
     line-height: $_content-line-height;
     letter-spacing: $_content-letter-spacing;
@@ -7,14 +7,21 @@
 }
 
 // This does not apply to the element/selector that encases the import
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.button {
-    font-family: $_header-font-family;
-    line-height: $_header-line-height;
-    letter-spacing: $_header-letter-spacing;
+& h1,
+& h2,
+& h3,
+& h4,
+& h5,
+& h6,
+* h1,
+* h2,
+* h3,
+* h4,
+* h5,
+* h6 {
+    font-family: $_header-font-family !important;
+    // line-height: $_header-line-height !important;
+    // overrides page.scss from storybook
+    margin: 0;
+    letter-spacing: $_header-letter-spacing !important;
 }
