@@ -2,4 +2,48 @@
 
 nav.nav-container {
     @import "../../assets/scss/defaults.scss";
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .nav-logo-container {
+        height: 4rem;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &.nav--small {
+        justify-content: center;
+
+        ul {
+            position: absolute;
+            top: 100%;
+            flex-direction: column;
+            max-width: 95%;
+            width: max-content;
+            min-width: 200px;
+        }
+    }
+
+    &.nav--large {
+        justify-content: space-between;
+
+        ul {
+            flex-direction: row;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        gap: 1rem;
+        font-family: $_header-font-family;
+        font-size: $_content-font-size;
+    }
 }

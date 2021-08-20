@@ -1,5 +1,7 @@
 import React, { ReactNode, useCallback, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import HamburgerToggle from "../HamburgerToggle";
 // import { useMediaQuery } from "react-responsive";
 // import { Link } from "react-router-dom";
 import "./index.scss";
@@ -16,9 +18,8 @@ export interface NavProps {
 
 const Nav: React.FC<NavProps> = (props) => {
     const [imgRef, setImgRef] = useState<HTMLImageElement | null>(null);
-    const [liRefs, setLiRefs] = useState<(HTMLLIElement | null)[]>(
-        props.items.map(() => null)
-    );
+    const [showMenu, setShowMenu] = useState(false);
+    const [ulRef, setUlRef] = useState<HTMLUListElement | null>(null);
     const [displayMobile, setDisplayMobile] = useState(false);
 
     useEffect(() => {
@@ -27,52 +28,57 @@ const Nav: React.FC<NavProps> = (props) => {
     });
 
     useEffect(() => {
-        if (imgRef && liRefsNotNull()) {
+        if (imgRef && ulRef) {
             checkMobile();
         }
-    }, [imgRef, liRefs]);
+    }, [imgRef, ulRef]);
 
-    const liRefsNotNull = useCallback(() => {
-        liRefs
-            .map((ref) => ref !== null)
-            .reduce((prevVal, currVal, currIndex) => {
-                if (currIndex === 0) {
-                    return true && currVal;
-                } else {
-                    return prevVal && currVal;
-                }
-            });
-    }, [liRefs]);
+    const running = useRef(false);
+    const maxListWidth = useRef(0);
 
     const checkMobile = useCallback(() => {
-        if (imgRef && liRefsNotNull) {
-            // 1rem = 16px
-            const minGaps = 6 * 16;
-            const listWidth = (liRefs as HTMLLIElement[])
-                .map((ref) => {
-                    return ref.clientWidth;
-                })
-                .reduce((prevVal, currVal) => {
-                    return prevVal + currVal;
-                });
+        if (!running.current) {
+            if (imgRef && ulRef) {
+                console.log(ulRef.clientWidth);
+                running.current = true;
+                // 1rem = 16px
+                const minGaps = 6 * 16;
 
-            const navLargerThanWindow = window.innerWidth < listWidth + minGaps;
-            if (!displayMobile && navLargerThanWindow) {
-                setDisplayMobile(true);
-            } else if (displayMobile && !navLargerThanWindow) {
-                setDisplayMobile(false);
+                if (ulRef.clientWidth > maxListWidth.current) {
+                    maxListWidth.current = ulRef.clientWidth;
+                    running.current = false;
+                    return;
+                }
+
+                const navLargerThanWindow =
+                    window.innerWidth <
+                    maxListWidth.current + imgRef.clientWidth + minGaps;
+
+                if (!displayMobile && navLargerThanWindow) {
+                    setDisplayMobile(true);
+                    setShowMenu(false);
+                } else if (displayMobile && !navLargerThanWindow) {
+                    setDisplayMobile(false);
+                    setShowMenu(false);
+                }
+                running.current = false;
             }
         }
-    }, [imgRef, liRefs]);
+    }, [imgRef, ulRef, displayMobile, setDisplayMobile, running]);
 
     return (
         <nav
             className={
-                "Nav nav-container " + displayMobile
-                    ? "nav--small"
-                    : "nav--large"
+                (displayMobile ? "nav--small" : "nav--large") +
+                " Nav nav-container"
             }
         >
+            {displayMobile && (
+                <HamburgerToggle
+                    showMenu={showMenu}
+                    toggleMenu={() => setShowMenu(!showMenu)}
+                />
+            )}
             <div className="nav-logo-container">
                 <img
                     ref={setImgRef}
@@ -81,17 +87,10 @@ const Nav: React.FC<NavProps> = (props) => {
                     className="nav-logo"
                 />
             </div>
-            <ul>
-                {props.items.map(({ name, path }, index) => (
-                    <li
-                        ref={(ref: HTMLLIElement) => {
-                            // This may require makuing a copy before modification
-                            liRefs[index] = ref;
-                            setLiRefs(liRefs);
-                        }}
-                        key={name}
-                    >
-                        <Link to={path}>name</Link>
+            <ul ref={setUlRef}>
+                {props.items.map(({ name, path }) => (
+                    <li key={name}>
+                        <Link to={path}>{name}</Link>
                     </li>
                 ))}
             </ul>
