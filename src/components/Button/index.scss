@@ -3,14 +3,12 @@
 .button-container {
     @import "../../assets/scss/defaults.scss";
     font-family: $_header-font-family !important;
-    line-height: $_header-line-height !important;
     letter-spacing: $_header-letter-spacing !important;
     border-radius: 5px;
     box-shadow: 4px 8px 8px rgba(43.9, 43.9, 43.9, 0.2);
     transition: all 0.3s ease;
     outline: none;
     text-align: center;
-    font-size: 0.75rem;
     text-transform: uppercase;
 
     &:not(:disabled) {
@@ -44,15 +42,21 @@
     }
 
     &.button--small {
-        padding: 0.5rem 2.5rem;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        line-height: 1rem;
     }
 
     &.button--medium {
-        padding: 0.5rem 3rem;
+        padding: 0.75rem 2rem;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
     }
 
     &.button--large {
-        padding: 0.75rem 4rem;
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
     }
 
     &:hover {

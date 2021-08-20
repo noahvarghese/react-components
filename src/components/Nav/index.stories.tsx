@@ -36,7 +36,7 @@ MainNav.args = {
     displayCallToAction: () => {
         return true;
     },
-    banner: "More than 30 years of experience",
+    bannerMessage: "More than 30 years of experience",
     displayBanner: () => true,
     logo: Logo,
 };
