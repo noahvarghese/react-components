@@ -1,12 +1,12 @@
-import React, { ReactNode, useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
-    BrowserRouter as Router,
     Route,
     RouteComponentProps,
     useLocation,
     useHistory,
 } from "react-router-dom";
 import Stack from "../../types/stack";
+import Footer, { FooterProps } from "../Footer";
 import Nav, { NavProps } from "../Nav";
 import ProtectedRoute from "../ProtectedRoute";
 import "./index.scss";
@@ -24,12 +24,14 @@ export interface AppRouterProps {
             redirectPath: string;
         };
     }[];
-    Footer: ReactNode;
+    footerProps: FooterProps;
 }
 
-const AppRouter: React.FC<AppRouterProps> = ({ Footer, ...props }) => {
+// must be enclosed in BrowserRouter
+const AppRouter: React.FC<AppRouterProps> = (props) => {
     // Keeps track of scroll position on each page
     const location = useLocation();
+    console.log(location);
     const history = useHistory();
 
     const [backStack, setBackStack] = useState<
@@ -88,36 +90,35 @@ const AppRouter: React.FC<AppRouterProps> = ({ Footer, ...props }) => {
         // if the user just went back 'pop' the last item out of the stack
         // and set -> window.scrollTo({top: stack.pop()})
         // if the user went forward set -> window.scrollTo({top: 0})
+        console.log(location);
         stacks(location, history);
         // if new page
     }, [location, history, stacks]);
 
     return (
         <div className="App app-container">
-            <Router>
-                <Nav {...props.navProps} />
-                <div className="content-container">
-                    {props.routes.map(
-                        ({ path, component, exact, protectedProps }) =>
-                            protectedProps ? (
-                                <ProtectedRoute
-                                    component={component}
-                                    exact={exact}
-                                    path={path}
-                                    redirectPath={protectedProps.redirectPath}
-                                    condition={protectedProps.condition}
-                                />
-                            ) : (
-                                <Route
-                                    exact={exact}
-                                    path={path}
-                                    component={component}
-                                />
-                            )
-                    )}
-                </div>
-                {Footer}
-            </Router>
+            <Nav {...props.navProps} />
+            <div className="content-container">
+                {props.routes.map(
+                    ({ path, component, exact, protectedProps }) =>
+                        protectedProps ? (
+                            <ProtectedRoute
+                                component={component}
+                                exact={exact}
+                                path={path}
+                                redirectPath={protectedProps.redirectPath}
+                                condition={protectedProps.condition}
+                            />
+                        ) : (
+                            <Route
+                                exact={exact}
+                                path={path}
+                                component={component}
+                            />
+                        )
+                )}
+            </div>
+            <Footer {...props.footerProps} />
         </div>
     );
 };
