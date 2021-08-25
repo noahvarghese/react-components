@@ -1,0 +1,23 @@
+@import "../../assets/scss/";
+
+.app-container {
+    @import "../../assets/scss/defaults.scss";
+
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .content-container {
+        min-height: calc(100vh - 17rem);
+    }
+
+    .footer-container {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+}
