@@ -1,3 +1,15 @@
+# v0.1.43 (Wed Aug 25 2021)
+
+#### ⚠️ Pushed to `main`
+
+- made nav props optional ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.42 (Wed Aug 25 2021)
 
 #### ⚠️ Pushed to `main`
