@@ -1,25 +1,29 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, RouteComponentProps } from "react-router-dom";
 
 interface ProtectedRouteProps {
-    component: React.FC<any>;
-    exact: boolean;
+    component?:
+        | React.ComponentType<RouteComponentProps<any>>
+        | React.ComponentType<any>;
+    exact?: boolean;
     path: string;
-    isAuthenticated: boolean;
+    redirectPath: string;
+    condition: () => boolean;
 }
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     component,
-    isAuthenticated,
+    condition,
     exact,
     path,
+    redirectPath,
     ...rest
 }) => {
-    if (isAuthenticated) {
+    if (condition()) {
         return (
             <Route {...rest} component={component} exact={exact} path={path} />
         );
     } else {
-        return <Redirect to="/" />;
+        return <Redirect to={redirectPath} />;
     }
 };
 

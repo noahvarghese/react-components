@@ -37,12 +37,17 @@ Router.args = {
         displayBanner: () => true,
         logo: Logo,
     },
-    children: (
-        <Route path="*">
-            <h1>Hello</h1>
-            <p>My name is Noah Varghese</p>
-        </Route>
-    ),
+    routes: [
+        {
+            path: "*",
+            component: () => (
+                <>
+                    <h1>Hello</h1>
+                    <p>My name is Noah Varghese</p>
+                </>
+            ),
+        },
+    ],
     Footer: (
         <footer className="Footer footer-container">
             &#169; Noah Varghese 2021
