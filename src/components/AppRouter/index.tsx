@@ -31,7 +31,6 @@ export interface AppRouterProps {
 const AppRouter: React.FC<AppRouterProps> = (props) => {
     // Keeps track of scroll position on each page
     const location = useLocation();
-    console.log(location);
     const history = useHistory();
 
     const [backStack, setBackStack] = useState<
