@@ -30,12 +30,6 @@ const Nav: React.FC<NavProps> = (props) => {
         return () => window.removeEventListener("resize", checkMobile);
     });
 
-    useEffect(() => {
-        if (imgRef && ulRef) {
-            checkMobile();
-        }
-    }, [imgRef, ulRef]);
-
     const running = useRef(false);
     const maxListWidth = useRef(0);
 
@@ -67,6 +61,12 @@ const Nav: React.FC<NavProps> = (props) => {
             }
         }
     }, [imgRef, ulRef, displayMobile, setDisplayMobile, running]);
+
+    useEffect(() => {
+        if (imgRef && ulRef) {
+            checkMobile();
+        }
+    }, [imgRef, ulRef, checkMobile]);
 
     return (
         <div
