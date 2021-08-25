@@ -11,9 +11,9 @@ import "./index.scss";
 export interface NavProps {
     items: { name: string; path: string }[];
     type: "card";
-    callToAction: { text: string; path: string };
+    callToAction?: { text: string; path: string };
     displayCallToAction?: () => boolean;
-    bannerMessage: ReactNode | string;
+    bannerMessage?: ReactNode | string;
     displayBanner?: () => boolean;
     logo: string;
 }
