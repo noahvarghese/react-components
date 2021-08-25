@@ -1,3 +1,16 @@
+# v0.1.44 (Wed Aug 25 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/noahvarghese/react-components into main ([@noahvarghese](https://github.com/noahvarghese))
+- copy scss files 2 tiers down ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.43 (Wed Aug 25 2021)
 
 #### ⚠️ Pushed to `main`
