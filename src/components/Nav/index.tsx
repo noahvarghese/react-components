@@ -1,5 +1,6 @@
 import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import HamburgerToggle from "../HamburgerToggle";
@@ -18,6 +19,7 @@ export interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = (props) => {
+    const location = useLocation();
     const [imgRef, setImgRef] = useState<HTMLImageElement | null>(null);
     const [showMenu, setShowMenu] = useState(false);
     const [ulRef, setUlRef] = useState<HTMLUListElement | null>(null);
@@ -40,7 +42,6 @@ const Nav: React.FC<NavProps> = (props) => {
     const checkMobile = useCallback(() => {
         if (!running.current) {
             if (imgRef && ulRef) {
-                console.log(ulRef.clientWidth);
                 running.current = true;
                 // 1rem = 16px
                 const minGaps = 6 * 16;
@@ -105,7 +106,12 @@ const Nav: React.FC<NavProps> = (props) => {
                     }
                 >
                     {props.items.map(({ name, path }) => (
-                        <li key={name}>
+                        <li
+                            key={name}
+                            className={
+                                path === location.pathname ? "nav--active" : ""
+                            }
+                        >
                             <Link to={path}>{name}</Link>
                         </li>
                     ))}

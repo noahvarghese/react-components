@@ -54,6 +54,7 @@
             ul {
                 flex-direction: row;
                 gap: 1rem;
+                z-index: 4;
             }
         }
     }
@@ -118,6 +119,16 @@
                 align-items: center;
                 justify-content: center;
             }
+
+            li.nav--active li.nav--active > a,
+            li:hover,
+            li:hover > a {
+                color: $_secondary-color;
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
         }
     }
 
@@ -129,10 +140,5 @@
         align-items: center;
         justify-content: flex-end;
         padding-right: 1rem;
-
-        .Button {
-            // font-size: 1rem;
-            // padding: 0.25rem 0.75rem;
-        }
     }
 }
