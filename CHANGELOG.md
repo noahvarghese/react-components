@@ -1,3 +1,28 @@
+# v0.1.41 (Wed Aug 25 2021)
+
+#### ⚠️ Pushed to `main`
+
+- updated yarn lockfile ([@noahvarghese](https://github.com/noahvarghese))
+- removed console debug ([@noahvarghese](https://github.com/noahvarghese))
+- added in footer component and moved router as decorator ([@noahvarghese](https://github.com/noahvarghese))
+- adjusted approuter and added stack data type ([@noahvarghese](https://github.com/noahvarghese))
+- added in a central router to accept different pages ([@noahvarghese](https://github.com/noahvarghese))
+- added in sizing for root elements ([@noahvarghese](https://github.com/noahvarghese))
+- fixed missing dependency ([@noahvarghese](https://github.com/noahvarghese))
+- added active class to nav, adjusted z-indexes, added location usage, removed debug console output ([@noahvarghese](https://github.com/noahvarghese))
+- finished nav ([@noahvarghese](https://github.com/noahvarghese))
+- dynamically switches to mobile ([@noahvarghese](https://github.com/noahvarghese))
+- added in hamburger toggle button ([@noahvarghese](https://github.com/noahvarghese))
+- commented out unused css selector ([@noahvarghese](https://github.com/noahvarghese))
+- added in form and finessed the input components a little ([@noahvarghese](https://github.com/noahvarghese))
+- started Form development ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.40 (Tue Aug 17 2021)
 
 #### ⚠️ Pushed to `main`
