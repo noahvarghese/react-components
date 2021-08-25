@@ -112,6 +112,9 @@
             ]
         ]
     },
+    "include": [
+        "src"
+    ],
     "description": "React components",
     "author": "noahvarghese <varghese.noah@gmail.com>",
     "license": "MIT",
