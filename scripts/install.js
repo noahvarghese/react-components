@@ -24,6 +24,6 @@ const newConfigPath = "../../../components.config.scss";
     for (let file of importPaths) {
         // rewrite both files
         fs.unlinkSync(file);
-        fs.writeFileSync(file, '@import "../../../../../../components.config.scss";\n@import "./core/";\n');
+        fs.writeFileSync(file, '@import "../../../../../../../components.config.scss";\n@import "./core/";\n');
     }
 })();
