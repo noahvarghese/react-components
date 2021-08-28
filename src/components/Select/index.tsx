@@ -102,7 +102,10 @@ const Select: React.FC<SelectProps> = (props) => {
 
     return (
         <div
-            className="Select select-container"
+            className={
+                (props.errorState?.value ? "error " : "") +
+                "Select select-container"
+            }
             onClick={(e) => {
                 if (!open) inputRef?.focus();
                 stopBubbling(e);

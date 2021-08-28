@@ -23,6 +23,7 @@ div.option-list-container {
 
     div.option-container {
         padding: 1rem 2rem;
+        z-index: 4;
 
         &:not(.visible) {
             display: none;

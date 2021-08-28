@@ -4,7 +4,6 @@
     @import "../../assets/scss/defaults.scss";
     position: relative;
     width: 100%;
-    height: calc(#{$_content-font-size} * 4);
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
@@ -15,6 +14,20 @@
         transform: scale(1.01);
         div.error-message {
             top: calc(100% - #{$_content-font-size} + 1px);
+        }
+    }
+
+    &:not(.error) {
+        height: calc(#{$_content-font-size} * 3);
+    }
+
+    &.error {
+        height: calc(#{$_content-font-size} * 4);
+
+        label {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 
