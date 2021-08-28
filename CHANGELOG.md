@@ -1,3 +1,16 @@
+# v0.1.47 (Sat Aug 28 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- fixed the approuter render ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.46 (Sat Aug 28 2021)
 
 #### ⚠️ Pushed to `main`
