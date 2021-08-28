@@ -89,7 +89,6 @@ const AppRouter: React.FC<AppRouterProps> = (props) => {
         // if the user just went back 'pop' the last item out of the stack
         // and set -> window.scrollTo({top: stack.pop()})
         // if the user went forward set -> window.scrollTo({top: 0})
-        console.log(location);
         stacks(location, history);
         // if new page
     }, [location, history, stacks]);
@@ -107,9 +106,11 @@ const AppRouter: React.FC<AppRouterProps> = (props) => {
                                 path={path}
                                 redirectPath={protectedProps.redirectPath}
                                 condition={protectedProps.condition}
+                                key={path}
                             />
                         ) : (
                             <Route
+                                key={path}
                                 exact={exact}
                                 path={path}
                                 component={component}
