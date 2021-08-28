@@ -1,3 +1,15 @@
+# v0.1.45 (Sat Aug 28 2021)
+
+#### ⚠️ Pushed to `main`
+
+- adjusted import path ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.44 (Wed Aug 25 2021)
 
 #### ⚠️ Pushed to `main`
