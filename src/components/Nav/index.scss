@@ -2,6 +2,7 @@
 
 .nav-container {
     @import "../../assets/scss/defaults.scss";
+    position: sticky;
 
     &.nav--small {
         nav {
