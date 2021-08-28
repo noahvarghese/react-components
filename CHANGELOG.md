@@ -1,3 +1,15 @@
+# v0.1.51 (Sat Aug 28 2021)
+
+#### ⚠️ Pushed to `main`
+
+- applied position to nav ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.50 (Sat Aug 28 2021)
 
 #### ⚠️ Pushed to `main`
