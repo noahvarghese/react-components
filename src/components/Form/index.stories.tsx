@@ -2,16 +2,19 @@ import React from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import Form from "./";
+import Form, { FormProps } from "./";
 import Input from "../Input";
 import Button from "../Button";
+import Checkbox from "../Checkbox";
 
 export default {
     title: "Form",
     component: Form,
 } as ComponentMeta<typeof Form>;
 
-const Template: ComponentStory<typeof Form> = (args) => <Form {...args} />;
+const Template: ComponentStory<typeof Form> = (args: FormProps) => {
+    return <Form {...args} />;
+};
 
 export const CardFormSingleButton = Template.bind({});
 
@@ -37,6 +40,16 @@ CardFormMultipleButtons.args = {
     submitFunction: () => console.log("Submitted"),
     children: (
         <>
+            <Checkbox
+                state={{
+                    setState: () => {
+                        return;
+                    },
+                    value: false,
+                }}
+                name="Checkbox"
+                label="Checkbox"
+            />
             <Input
                 type="email"
                 name="email"
@@ -45,7 +58,7 @@ CardFormMultipleButtons.args = {
                 state={{ value: "", setState: () => console.log("changed") }}
                 errorState={{
                     setError: console.error,
-                    value: "Field cannot be empty",
+                    value: "",
                 }}
             />
             <Input
