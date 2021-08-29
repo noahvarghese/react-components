@@ -1,3 +1,15 @@
+# v0.1.57 (Sun Aug 29 2021)
+
+#### ⚠️ Pushed to `main`
+
+- changed error font-size ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.56 (Sun Aug 29 2021)
 
 #### ⚠️ Pushed to `main`
