@@ -192,9 +192,9 @@ const Select: React.FC<SelectProps> = (props) => {
                     } else if (e.key.length === 1) {
                         setInputValue(inputValue + e.key);
                         checkForErrors(inputValue + e.key);
-                    } else if (e.key === "Backspace") {
+                    } else if (e.key === "Backspace" || e.key === "Delete") {
                         const currentVal = inputValue.substring(
-                            0,
+                            e.key === "Backspace" ? 0 : 1,
                             inputValue.length - 1
                         );
                         setInputValue(currentVal);

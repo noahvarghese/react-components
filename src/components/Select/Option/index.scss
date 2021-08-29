@@ -6,8 +6,9 @@ div.option-list-container {
     left: 0;
     width: max-content;
     max-width: 100%;
+    margin-top: 2px;
     top: calc(100% - #{$_content-font-size});
-    z-index: 4;
+    z-index: 20;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 2px 8px 8px rgba(43, 43, 43, 0.2);
@@ -23,7 +24,8 @@ div.option-list-container {
 
     div.option-container {
         padding: 1rem 2rem;
-        z-index: 4;
+        z-index: 20;
+        transition: all 0.3s ease;
 
         &:not(.visible) {
             display: none;
@@ -35,6 +37,10 @@ div.option-list-container {
 
         &.selected {
             display: block !important;
+            color: $_secondary-color;
+        }
+
+        &:hover {
             color: $_secondary-color;
         }
     }
