@@ -1,3 +1,16 @@
+# v0.1.55 (Sun Aug 29 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- styling to allow select to be shown over other form components ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.54 (Sun Aug 29 2021)
 
 #### ⚠️ Pushed to `main`
