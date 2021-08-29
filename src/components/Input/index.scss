@@ -35,7 +35,6 @@ div.input-container {
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            font-size: calc(0.75 * #{$_content-font-size});
         }
     }
 
@@ -130,7 +129,9 @@ div.input-container {
         top: calc(100% - #{$_content-font-size});
         left: 0;
         padding: 0;
-        font-size: calc(#{$_content-font-size} * 0.75);
+        p {
+            font-size: calc(#{$_content-font-size} * 0.75);
+        }
         color: $_error-color;
         transition: all 0.3s ease;
     }
