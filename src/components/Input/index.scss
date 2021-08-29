@@ -49,11 +49,18 @@ div.input-container {
         width: 100%;
         height: calc(#{$_content-font-size} * 2);
 
-        &:focus + label span,
-        &:valid + label span,
-        &.has-input + label span {
+        &[type="date"] + label span {
             transform: translateY(-150%);
             font-size: 14px;
+        }
+
+        &:not([type="date"]) {
+            &:focus + label span,
+            &:valid + label span,
+            &.has-input + label span {
+                transform: translateY(-150%);
+                font-size: 14px;
+            }
         }
 
         &:focus + label::after,
