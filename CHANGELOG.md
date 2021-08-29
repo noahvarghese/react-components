@@ -1,3 +1,15 @@
+# v0.1.60 (Sun Aug 29 2021)
+
+#### ⚠️ Pushed to `main`
+
+- updated input height when error show ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.59 (Sun Aug 29 2021)
 
 #### ⚠️ Pushed to `main`
