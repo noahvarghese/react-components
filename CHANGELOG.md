@@ -1,3 +1,15 @@
+# v0.1.54 (Sun Aug 29 2021)
+
+#### ⚠️ Pushed to `main`
+
+- updated classNames to reflect naming convention ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.53 (Sun Aug 29 2021)
 
 #### ⚠️ Pushed to `main`
