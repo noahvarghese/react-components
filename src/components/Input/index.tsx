@@ -17,6 +17,7 @@ interface InputProps {
     validationOptions?: ValidationProps;
     errorState?: ErrorProps;
     formatter?: (input: any) => any;
+    autoComplete?: string;
 }
 
 const Input: React.FC<InputProps> = (props) => {
@@ -50,6 +51,7 @@ const Input: React.FC<InputProps> = (props) => {
             }
         >
             <input
+                autoComplete={props.autoComplete}
                 type={props.type}
                 readOnly={props.readonly}
                 name={props.name}
