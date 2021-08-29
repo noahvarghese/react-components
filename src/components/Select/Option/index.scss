@@ -7,7 +7,8 @@ div.option-list-container {
     width: max-content;
     max-width: 100%;
     margin-top: 2px;
-    top: calc(100% - #{$_content-font-size});
+    // top: calc(100% - #{$_content-font-size});
+    top: calc(#{$_content-font-size} * 3);
     z-index: 20;
     overflow: hidden;
     transition: all 0.3s ease;

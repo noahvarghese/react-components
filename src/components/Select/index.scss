@@ -3,11 +3,12 @@
 .select-container {
     @import "../../assets/scss/defaults.scss";
     position: relative;
-    width: 100%;
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    min-width: 200px;
     transition: all 0.3s ease;
 
     &,
@@ -24,6 +25,7 @@
     }
 
     &:not(.error) {
+        align-items: flex-end;
         height: calc(#{$_content-font-size} * 3);
     }
 
@@ -89,21 +91,18 @@
 
     input {
         width: 100%;
-        z-index: 2;
+        height: calc(#{$_content-font-size} * 2);
         background-color: transparent;
         border: none;
         outline: none;
     }
 
     label {
-        z-index: 1;
         position: absolute;
         width: 100%;
         height: calc(#{$_content-font-size} * 2);
 
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
 
         display: flex;
         flex-direction: row;
@@ -140,8 +139,7 @@
     .DropdownArrow {
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 40%;
     }
 
     .error-message {
