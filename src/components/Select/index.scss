@@ -36,6 +36,7 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
+            font-size: calc(0.75 * #{$_content-font-size});
         }
     }
 
