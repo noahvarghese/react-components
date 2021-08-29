@@ -1,3 +1,15 @@
+# v0.1.61 (Sun Aug 29 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added autocomplete atrribute support ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.60 (Sun Aug 29 2021)
 
 #### ⚠️ Pushed to `main`
