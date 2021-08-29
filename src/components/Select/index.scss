@@ -30,7 +30,7 @@
     }
 
     &.error {
-        height: calc(#{$_content-font-size} * 4);
+        height: calc(#{$_content-font-size} * 3.75);
 
         label {
             left: 0;
