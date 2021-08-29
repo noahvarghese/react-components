@@ -11,7 +11,7 @@ export interface CheckboxProps {
 
 const Checkbox: React.FC<CheckboxProps> = (props) => {
     return (
-        <div className="checkbox">
+        <div className="checkbox-container Checkbox">
             <input
                 type="checkbox"
                 id={props.name}

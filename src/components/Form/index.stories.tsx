@@ -40,16 +40,6 @@ CardFormMultipleButtons.args = {
     submitFunction: () => console.log("Submitted"),
     children: (
         <>
-            <Checkbox
-                state={{
-                    setState: () => {
-                        return;
-                    },
-                    value: false,
-                }}
-                name="Checkbox"
-                label="Checkbox"
-            />
             <Input
                 type="email"
                 name="email"
@@ -60,6 +50,16 @@ CardFormMultipleButtons.args = {
                     setError: console.error,
                     value: "",
                 }}
+            />
+            <Checkbox
+                state={{
+                    setState: () => {
+                        return;
+                    },
+                    value: false,
+                }}
+                name="Checkbox"
+                label="Checkbox"
             />
             <Input
                 type="password"
