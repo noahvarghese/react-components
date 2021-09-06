@@ -1,3 +1,15 @@
+# v0.1.62 (Mon Sep 06 2021)
+
+#### ⚠️ Pushed to `main`
+
+- applied id to select element ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.61 (Sun Aug 29 2021)
 
 #### ⚠️ Pushed to `main`
