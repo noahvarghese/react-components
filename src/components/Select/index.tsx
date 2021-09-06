@@ -210,6 +210,7 @@ const Select: React.FC<SelectProps> = (props) => {
                 defaultValue={props.state.value.value}
                 name={props.name}
                 className={selectClassName}
+                id={props.name}
             >
                 {/* Add empty first option that cannot be reselected */}
                 {[{ id: -1, value: "" }, ...props.items].map(
