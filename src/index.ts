@@ -8,6 +8,7 @@ export { default as Form } from "./components/Form";
 export { default as HamburgerToggle } from "./components/HamburgerToggle";
 export { default as Input } from "./components/Input";
 export { default as Nav } from "./components/Nav";
+export { default as Notification } from "./components/Notification";
 export { default as ProtectedRoute } from "./components/ProtectedRoute";
 export { default as Radio } from "./components/Radio";
 export { default as RadioFieldset } from "./components/RadioFieldset";
