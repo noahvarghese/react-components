@@ -9,7 +9,6 @@ interface NotificationProps {
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
-    console.log(props.error);
     useEffect(() => {
         if (props.display) {
             setTimeout(() => {
