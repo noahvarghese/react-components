@@ -11,7 +11,7 @@ const SimpleNotificationContainer = (props) => {
     useEffect(() => {
         setInterval(() => {
             store.set({ display: true });
-        }, 3000);
+        }, 4000);
     }, []);
 
     return (
