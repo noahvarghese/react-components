@@ -6,7 +6,7 @@ interface ProtectedRouteProps {
         | React.ComponentType<RouteComponentProps<any>>
         | React.ComponentType<any>;
     exact?: boolean;
-    path: string;
+    path?: string;
     redirectPath: string;
     condition: () => boolean;
 }

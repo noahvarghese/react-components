@@ -14,7 +14,7 @@ import "./index.scss";
 export interface AppRouterProps {
     navProps: NavProps;
     routes: {
-        path: string;
+        path?: string;
         component?:
             | React.ComponentType<RouteComponentProps<any>>
             | React.ComponentType<any>;
