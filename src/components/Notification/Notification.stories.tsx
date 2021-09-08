@@ -3,9 +3,7 @@ import React, { useEffect } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import Notification from ".";
-import { useState } from "react";
 import { State, Store } from "@sambego/storybook-state";
-import { strictEqual } from "assert";
 
 const store = new Store({ display: false });
 
