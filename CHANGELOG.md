@@ -1,3 +1,15 @@
+# v0.1.68 (Wed Sep 08 2021)
+
+#### ⚠️ Pushed to `main`
+
+- made the bounce a percentage of height as opposed to fixed amount ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.67 (Wed Sep 08 2021)
 
 #### ⚠️ Pushed to `main`
