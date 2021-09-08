@@ -2108,7 +2108,7 @@
 
 "@sambego/storybook-state@^2.0.1":
   version "2.0.1"
-  resolved "https://registry.npmjs.org/@sambego/storybook-state/-/storybook-state-2.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/@sambego/storybook-state/-/storybook-state-2.0.1.tgz#862096913e708cbdeae32b0d2256fc59c254699b"
   integrity sha512-pkD6IAMb+aB5Ow9toQDHOWZVnd0RAgsJekPfUL92UxCcx8EYM3J9xu6aPvmJbJJXc2bYcwv/z6l36Ej9cV7UJw==
   dependencies:
     "@storybook/addons" "^5.3.3"
