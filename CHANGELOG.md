@@ -1,3 +1,15 @@
+# v0.1.70 (Wed Sep 08 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added switch to appRouter ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.69 (Wed Sep 08 2021)
 
 #### ⚠️ Pushed to `main`
