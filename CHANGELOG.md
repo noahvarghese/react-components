@@ -1,3 +1,16 @@
+# v0.1.63 (Wed Sep 08 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Removed unused declarations and updated lock file ([@noahvarghese](https://github.com/noahvarghese))
+- added in notification ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.62 (Mon Sep 06 2021)
 
 #### ⚠️ Pushed to `main`
