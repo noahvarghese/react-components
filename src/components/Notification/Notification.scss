@@ -15,13 +15,38 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 5px;
-    border: 2px solid $_primary-color;
     z-index: 30;
     text-transform: uppercase;
 
+    &:not(.error) {
+        p {
+            color: $_primary-color;
+        }
+
+        &.show {
+            animation: fadein 0.5s forwards, burst 0.3s 0.2s forwards,
+                bounce-top 0.9s 0.5s both, fadeout 1.5s 1.4s forwards;
+            -webkit-animation: fadein 0.5s forwards, burst 0.3s 0.2s forwards,
+                bounce-top 0.9s 0.5s both, fadeout 1.5s 1.4s forwards;
+        }
+    }
+
+    &.error {
+        p {
+            color: $_error-color;
+        }
+
+        &.show {
+            animation: fadein 0.5s forwards, burst-error 0.3s 0.2s forwards,
+                bounce-top 0.9s 0.5s both, fadeout 1.5s 1.4s forwards;
+            -webkit-animation: fadein 0.5s forwards,
+                burst-error 0.3s 0.2s forwards, bounce-top 0.9s 0.5s both,
+                fadeout 1.5s 1.4s forwards;
+        }
+    }
+
     p {
         font-family: $_header-font-family;
-        color: $_secondary-color;
     }
 
     &.show {
@@ -29,10 +54,6 @@
         transform: translateX(50%);
         background-repeat: no-repeat;
         background-position: 52% 52%;
-        animation: fadein 0.5s forwards, burst 0.3s 0.2s forwards,
-            bounce-top 0.9s 0.5s both, fadeout 1.5s 1.4s forwards;
-        -webkit-animation: fadein 0.5s forwards, burst 0.3s 0.2s forwards,
-            bounce-top 0.9s 0.5s both, fadeout 1.5s 1.4s forwards;
     }
 
     &.show > p {
@@ -82,6 +103,27 @@
         }
         to {
             background-size: 100% 100%;
+            background-image: linear-gradient($_primary-color, $_primary-color);
+        }
+    }
+
+    @keyframes burst-error {
+        from {
+            background-size: 0 0;
+        }
+        to {
+            background-size: 100% 100%;
+            background-image: linear-gradient($_error-color, $_error-color);
+        }
+    }
+
+    @-webkit-keyframes burst-error {
+        from {
+            background-size: 0% 0%;
+        }
+        to {
+            background-size: 100% 100%;
+            background-image: linear-gradient($_error-color, $_error-color);
         }
     }
 
@@ -109,7 +151,7 @@
 
     @keyframes highlight {
         from {
-            color: $_secondary-color;
+            color: $_primary-color;
         }
         to {
             color: white;
@@ -118,7 +160,25 @@
 
     @-webkit-keyframes highlight {
         from {
-            color: $_secondary-color;
+            color: $_primary-color;
+        }
+        to {
+            color: white;
+        }
+    }
+
+    @keyframes highlight-error {
+        from {
+            color: $_error-color;
+        }
+        to {
+            color: white;
+        }
+    }
+
+    @-webkit-keyframes highlight-error {
+        from {
+            color: $_error-color;
         }
         to {
             color: white;

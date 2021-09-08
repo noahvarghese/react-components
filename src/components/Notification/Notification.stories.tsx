@@ -25,6 +25,7 @@ const SimpleNotificationContainer = (props) => {
         >
             <State store={store}>
                 <Notification
+                    error={props.error}
                     message="Hello"
                     display={store.get("display")}
                     hide={() => store.set({ display: false })}
@@ -44,3 +45,7 @@ const Template: ComponentStory<typeof Notification> = (args) => (
 );
 
 export const NotificationStory = Template.bind({});
+NotificationStory.args = {};
+
+export const ErrorNotificationStory = Template.bind({});
+ErrorNotificationStory.args = { error: true };

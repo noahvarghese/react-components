@@ -5,9 +5,11 @@ interface NotificationProps {
     message: string;
     display: boolean;
     hide: () => void;
+    error?: boolean;
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
+    console.log(props.error);
     useEffect(() => {
         if (props.display) {
             setTimeout(() => {
@@ -15,8 +17,14 @@ const Notification: React.FC<NotificationProps> = (props) => {
             }, 2000);
         }
     }, [props]);
+
+    const classNames = [];
+
+    if (props.display) classNames.push("show");
+    if (props.error) classNames.push("error");
+
     return (
-        <div className={(props.display ? "show " : "") + "Notification"}>
+        <div className={classNames.join(" ") + " Notification"}>
             <p>{props.message}</p>
         </div>
     );
