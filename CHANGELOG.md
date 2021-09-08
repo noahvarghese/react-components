@@ -1,3 +1,16 @@
+# v0.1.65 (Wed Sep 08 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added error state to notification ([@noahvarghese](https://github.com/noahvarghese))
+- forgot to include in declaration ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.64 (Wed Sep 08 2021)
 
 #### ⚠️ Pushed to `main`
