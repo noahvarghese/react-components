@@ -18,11 +18,9 @@ form.form-container {
         box-shadow: 4px 8px 8px 4px rgba(44, 44, 44, 0.2);
     }
 
-    // &.bordered {
-    // }
-
     .form--contents {
         display: flex;
+        position: relative;
         flex-direction: column;
         flex-wrap: nowrap;
         gap: 1rem;
