@@ -4,6 +4,7 @@ import {
     RouteComponentProps,
     useLocation,
     useHistory,
+    Switch,
 } from "react-router-dom";
 import Stack from "../../types/stack";
 import Footer, { FooterProps } from "../Footer";
@@ -97,26 +98,28 @@ const AppRouter: React.FC<AppRouterProps> = (props) => {
         <div className="App app-container">
             <Nav {...props.navProps} />
             <div className="content-container">
-                {props.routes.map(
-                    ({ path, component, exact, protectedProps }) =>
-                        protectedProps ? (
-                            <ProtectedRoute
-                                component={component}
-                                exact={exact}
-                                path={path}
-                                redirectPath={protectedProps.redirectPath}
-                                condition={protectedProps.condition}
-                                key={path}
-                            />
-                        ) : (
-                            <Route
-                                key={path}
-                                exact={exact}
-                                path={path}
-                                component={component}
-                            />
-                        )
-                )}
+                <Switch>
+                    {props.routes.map(
+                        ({ path, component, exact, protectedProps }) =>
+                            protectedProps ? (
+                                <ProtectedRoute
+                                    component={component}
+                                    exact={exact}
+                                    path={path}
+                                    redirectPath={protectedProps.redirectPath}
+                                    condition={protectedProps.condition}
+                                    key={path}
+                                />
+                            ) : (
+                                <Route
+                                    key={path}
+                                    exact={exact}
+                                    path={path}
+                                    component={component}
+                                />
+                            )
+                    )}
+                </Switch>
             </div>
             <Footer {...props.footerProps} />
         </div>
