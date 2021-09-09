@@ -1,5 +1,5 @@
 export interface ValidationProps {
-    validator: (
+    validator?: (
         input: any,
         validOptions?: { id: number; value: any }[]
     ) => { success: true } | { success: false; errorMessage: string };

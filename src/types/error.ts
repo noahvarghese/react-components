@@ -1,4 +1,8 @@
+import React, { SetStateAction } from "react";
+
 export interface ErrorProps {
-    value: string | undefined;
-    setError: (val?: string | undefined) => void;
+    error: string | undefined;
+    setError: (
+        val?: string | undefined
+    ) => void | React.Dispatch<SetStateAction<string>>;
 }

@@ -14,7 +14,11 @@ const newConfigPath = "../../../components.config.scss";
         // Copy current stable config to new location for use
         const res = await fetch("https://raw.githubusercontent.com/noahvarghese/react-components/main/default.config.scss");
         const text = await res.text();
-        fs.writeFileSync(newConfigPath, text);
+        try {
+            fs.writeFileSync(newConfigPath, text);
+        } catch (_) {
+            return;
+        }
     }
 
     // Modify reference to files
