@@ -1,3 +1,18 @@
+# v0.1.73 (Thu Sep 09 2021)
+
+#### ⚠️ Pushed to `main`
+
+- had wrong env value ([@noahvarghese](https://github.com/noahvarghese))
+- fixed error ([@noahvarghese](https://github.com/noahvarghese))
+- added check for ci/cd ([@noahvarghese](https://github.com/noahvarghese))
+- change way of setting env variables ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.72 (Thu Sep 09 2021)
 
 #### ⚠️ Pushed to `main`
