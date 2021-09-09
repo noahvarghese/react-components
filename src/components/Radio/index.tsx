@@ -17,10 +17,10 @@ const Radio: React.FC<RadioProps> = (props) => {
                 type="radio"
                 id={props.id}
                 name={props.name}
-                checked={props.state.value}
+                checked={props.state.state}
                 onChange={(_) => {
                     if (!props.readonly) {
-                        props.state.setState(!props.state.value);
+                        props.state.setState(!props.state.state);
                     }
                 }}
                 readOnly={props.readonly}

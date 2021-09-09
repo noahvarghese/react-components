@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import validator from "validator";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Input from ".";

@@ -20,6 +20,7 @@ jobs:
           yarn install
           yarn test
   continuous-deployment:
+    needs: continuous-integration
     # The operating system it will run on
     runs-on: ubuntu-latest
     # This check needs to be in place to prevent a publish loop with auto and github actions

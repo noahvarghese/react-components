@@ -42,10 +42,10 @@ const Select: React.FC<SelectProps> = (props) => {
     const selectClassName = useMemo(() => {
         const classes = [];
 
-        if (props.errorState && props.errorState.value) classes.push("error");
+        if (props.errorState && props.errorState.error) classes.push("error");
         if (open) classes.push("show");
         if (inputRef?.value !== "") classes.push("has-input");
-        if (props.state.value.value !== "") classes.push("has-selected");
+        if (props.state.state.value !== "") classes.push("has-selected");
 
         return classes.join(" ");
     }, [props.errorState, inputRef, props.state, open]);
@@ -90,20 +90,20 @@ const Select: React.FC<SelectProps> = (props) => {
     );
 
     useEffect(() => {
-        setInput(props.state.value.value);
+        setInput(props.state.state.value);
         if (selectRef) {
-            if (props.state.value.id > 0) {
-                selectRef.selectedIndex = props.state.value.id;
+            if (props.state.state.id > 0) {
+                selectRef.selectedIndex = props.state.state.id;
             } else {
                 selectRef.selectedIndex = 0;
             }
         }
-    }, [props.state.value, setInput, selectRef]);
+    }, [props.state.state, setInput, selectRef]);
 
     return (
         <div
             className={
-                (props.errorState?.value ? "error " : "") +
+                (props.errorState?.error ? "error " : "") +
                 "Select select-container"
             }
             onClick={(e) => {
@@ -119,17 +119,17 @@ const Select: React.FC<SelectProps> = (props) => {
                 stopBubbling(e);
             }}
         >
-            {props.errorState && props.errorState.value && (
+            {props.errorState && props.errorState.error && (
                 <div className="error-message">
-                    <p>{props.errorState.value}</p>
+                    <p>{props.errorState.error}</p>
                 </div>
             )}
 
             <OptionList
                 items={props.items}
                 selected={{
-                    id: props.state.value.id,
-                    value: props.state.value.value,
+                    id: props.state.state.id,
+                    value: props.state.state.value,
                 }}
                 inputValue={inputValue}
                 visible={open}
@@ -145,7 +145,7 @@ const Select: React.FC<SelectProps> = (props) => {
                     if (e.key === "ArrowDown") {
                         const currentIndex = props.items.indexOf(
                             props.items.find(
-                                ({ value }) => value === props.state.value.value
+                                ({ value }) => value === props.state.state.value
                             )!
                         );
 
@@ -157,7 +157,7 @@ const Select: React.FC<SelectProps> = (props) => {
                     } else if (e.key === "ArrowUp") {
                         const currentIndex = props.items.indexOf(
                             props.items.find(
-                                ({ value }) => value === props.state.value.value
+                                ({ value }) => value === props.state.state.value
                             )!
                         );
 
@@ -199,7 +199,7 @@ const Select: React.FC<SelectProps> = (props) => {
                         );
                         setInputValue(currentVal);
                         checkForErrors(currentVal);
-                        if (props.state.value.value !== "") {
+                        if (props.state.state.value !== "") {
                             props.state.setState({ id: -1, value: "" });
                         }
                     }
@@ -207,7 +207,7 @@ const Select: React.FC<SelectProps> = (props) => {
             />
             <select
                 ref={setSelectRef}
-                defaultValue={props.state.value.value}
+                defaultValue={props.state.state.value}
                 name={props.name}
                 className={selectClassName}
                 id={props.name}
@@ -229,7 +229,7 @@ const Select: React.FC<SelectProps> = (props) => {
             <label
                 htmlFor={props.name}
                 className={
-                    props.errorState && props.errorState.value ? "error" : ""
+                    props.errorState && props.errorState.error ? "error" : ""
                 }
             >
                 <span>{(props.required && "* ") + props.placeholder}</span>
