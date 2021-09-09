@@ -1,3 +1,17 @@
+# v0.1.72 (Thu Sep 09 2021)
+
+#### ⚠️ Pushed to `main`
+
+- maybe fixed ([@noahvarghese](https://github.com/noahvarghese))
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- typo ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.71 (Thu Sep 09 2021)
 
 #### ⚠️ Pushed to `main`
