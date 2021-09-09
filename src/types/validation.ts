@@ -1,7 +1,7 @@
 export interface ValidationProps {
-    validator?: (
+    validatorFn?: (
         input: any,
-        validOptions?: { id: number; value: any }[]
+        field: string
     ) => { success: true } | { success: false; errorMessage: string };
     runOnComplete: boolean;
     runOnInput: boolean;

@@ -27,10 +27,6 @@ describe("email input", () => {
                     setState,
                 }}
                 errorState={{ error, setError }}
-                validationOptions={{
-                    runOnComplete: true,
-                    runOnInput: true,
-                }}
             />
         );
     };
@@ -88,10 +84,6 @@ describe("phone input", () => {
                     setState,
                 }}
                 errorState={{ error, setError }}
-                validationOptions={{
-                    runOnComplete: true,
-                    runOnInput: true,
-                }}
             />
         );
     };
@@ -149,10 +141,6 @@ describe("postal code input", () => {
                     setState,
                 }}
                 errorState={{ error, setError }}
-                validationOptions={{
-                    runOnComplete: true,
-                    runOnInput: true,
-                }}
             />
         );
     };
@@ -210,10 +198,6 @@ describe("date input", () => {
                     setState,
                 }}
                 errorState={{ error, setError }}
-                validationOptions={{
-                    runOnComplete: true,
-                    runOnInput: true,
-                }}
             />
         );
     };
@@ -248,8 +232,12 @@ describe("date input", () => {
                 inputEl,
                 `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
             );
+            screen.debug();
         });
-        userEvent.clear(inputEl);
+        act(() => {
+            fireEvent.input(inputEl, "");
+        });
+
         expect(
             getByText(inputEl.parentElement, /birthday cannot be empty/i)
         ).toBeInTheDocument();

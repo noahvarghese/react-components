@@ -2,8 +2,7 @@ import React, { useCallback } from "react";
 import { ErrorProps } from "../../types/error";
 import { StateProps } from "../../types/state";
 import { ValidationProps } from "../../types/validation";
-import validator from "validator";
-import { PhoneNumber, PhoneNumberUtil } from "google-libphonenumber";
+import validators, { ValidatorFunction } from "../../util/validators";
 import "./index.scss";
 
 // Need to add in datalist capabilities
@@ -22,110 +21,14 @@ interface InputProps {
     autoComplete?: string;
 }
 
-type InputValidatorFunction = (
-    val: string,
-    field: string
-) => { success: true } | { success: false; errorMessage: string };
-
-interface InputValidators {
-    [name: string]: InputValidatorFunction;
-}
-
-const validators: InputValidators = {
-    required: (val: string, field: string) => {
-        if (validator.isEmpty(val)) {
-            return {
-                success: false,
-                errorMessage: `${field.split("_").join(" ")} cannot be empty`,
-            };
-        } else {
-            return {
-                success: true,
-            };
-        }
+const Input: React.FC<InputProps> = ({
+    validationOptions: { runOnInput, runOnComplete, validatorFn } = {
+        runOnInput: true,
+        runOnComplete: true,
     },
-    date: (val: string, field: string) => {
-        const res = validators.required(val, field);
-
-        if (!res.success) {
-            return res;
-        }
-
-        try {
-            Date.parse(val);
-            return { success: true };
-        } catch (_) {
-            return { success: false, errorMessage: `Invalid ${field}` };
-        }
-    },
-    email: (val: string) => {
-        const res = validators.required(val, "email");
-
-        if (!res.success) {
-            return res;
-        }
-
-        if (validator.isEmail(val)) {
-            return res;
-        } else {
-            return {
-                success: false,
-                errorMessage: "Invalid email",
-            };
-        }
-    },
-    tel: (val: string) => {
-        const res = validators.required(val, "phone number");
-
-        if (!res.success) {
-            return res;
-        }
-
-        let phoneUtil = new PhoneNumberUtil();
-        let phone: string | PhoneNumber = val;
-
-        try {
-            // currently locale is hard coded
-            phone = phoneUtil.parseAndKeepRawInput(phone, "CA");
-            if (phoneUtil.isValidNumber(phone)) {
-                return res;
-            }
-        } catch (e) {}
-
-        return {
-            success: false,
-            errorMessage: "Invalid phone number",
-        };
-    },
-    postal_code: (val: string) => {
-        const res = validators.required(val, "postal code");
-
-        if (!res.success) {
-            return res;
-        }
-
-        if (
-            !/^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i.test(
-                val
-            )
-        ) {
-            return {
-                success: false,
-                errorMessage: "Invalid postal code",
-            };
-        }
-        // validator does not work nicely with canadian postal codes
-        // if (validator.isPostalCode(val, "any")) {
-        // res.success = false;
-        // res.errorMessage = "Invalid postal code";
-        // }
-
-        return res;
-    },
-};
-
-const Input: React.FC<InputProps> = (props) => {
-    let chosenValidator: InputValidatorFunction | undefined = undefined;
+    ...props
+}) => {
+    let chosenValidator: ValidatorFunction | undefined = validatorFn;
 
     const validatorKeys = Object.keys(validators);
 
@@ -145,7 +48,6 @@ const Input: React.FC<InputProps> = (props) => {
             const value = props.formatter ? props.formatter(input) : input;
 
             if (
-                props.validationOptions &&
                 props.errorState &&
                 props.errorState.setError &&
                 run &&
@@ -179,22 +81,14 @@ const Input: React.FC<InputProps> = (props) => {
                 required={true}
                 id={props.name}
                 onChange={(e) => {
-                    validate(
-                        e.currentTarget.value,
-                        props.validationOptions?.runOnInput
-                    );
+                    validate(e.currentTarget.value, runOnInput);
                 }}
+                // This is here for date change tests
                 onInput={(e) => {
-                    validate(
-                        e.currentTarget.value,
-                        props.validationOptions?.runOnInput
-                    );
+                    validate(e.currentTarget.value, runOnInput);
                 }}
                 onBlur={(e) => {
-                    validate(
-                        e.currentTarget.value,
-                        props.validationOptions?.runOnComplete
-                    );
+                    validate(e.currentTarget.value, runOnComplete);
                 }}
                 className={
                     (props.errorState && props.errorState.error
