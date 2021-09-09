@@ -16,7 +16,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Prepare repository
         run: git fetch --unshallow --tags
+      - name: skip pre filght check
+        run: |
+          cp .gh_env .env
       - name: run continuous-integration
         run: |
           yarn install
           yarn test
+      - name: cleanup
+        run: rm .env
