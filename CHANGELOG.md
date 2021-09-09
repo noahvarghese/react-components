@@ -1,3 +1,18 @@
+# v0.1.76 (Thu Sep 09 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- fixed some errors in the stories ([@noahvarghese](https://github.com/noahvarghese))
+- made validation options optional ([@noahvarghese](https://github.com/noahvarghese))
+- added file to exclude ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.75 (Thu Sep 09 2021)
 
 #### ⚠️ Pushed to `main`
