@@ -1,3 +1,16 @@
+# v0.1.74 (Thu Sep 09 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- attempt idunno ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.73 (Thu Sep 09 2021)
 
 #### ⚠️ Pushed to `main`
