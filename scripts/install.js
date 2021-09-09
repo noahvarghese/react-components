@@ -16,8 +16,10 @@ const newConfigPath = "../../../components.config.scss";
         const text = await res.text();
         try {
             fs.writeFileSync(newConfigPath, text);
-        } catch (_) {
-            return;
+        } catch (e) {
+            if (process.env.NODE_ENV === "ci" || process.NODE_ENV === "cd") {
+                return;
+            } else throw e;
         }
     }
 

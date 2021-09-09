@@ -13,6 +13,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     env: 
       SKIP_PREFLIGHT_CHECK: false
+      NODE_ENV: ci
     steps:
       - uses: actions/checkout@v2
       - name: Prepare repository
@@ -21,8 +22,6 @@ jobs:
         run: |
           yarn install
           yarn test
-      - name: cleanup
-        run: rm .env
   continuous-deployment:
     needs: continuous-integration
     # The operating system it will run on
@@ -31,6 +30,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     env: 
       SKIP_PREFLIGHT_CHECK: false
+      NODE_ENV: cd
     # The list of steps that the action will go through
     steps:
       - uses: actions/checkout@v2
