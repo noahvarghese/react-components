@@ -36,6 +36,7 @@
     "node_modules",
     "lib",
     "src/**/*.stories.tsx",
-    "src/**/*.test.tsx"
+    "src/**/*.test.tsx",
+    "src/setupTests.ts"
   ]
 }
