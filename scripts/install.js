@@ -5,6 +5,8 @@ const fetch = require("node-fetch");
 const newConfigPath = "../../../components.config.scss";
 
 (async () => {
+    let skip = false;
+
     // Run only if not part of CI
     if (!fs.existsSync("./lib")) {
         return;
@@ -18,17 +20,19 @@ const newConfigPath = "../../../components.config.scss";
             fs.writeFileSync(newConfigPath, text);
         } catch (e) {
             if (process.env.NODE_ENV === "ci" || process.NODE_ENV === "cd") {
-                return;
+                skip = true;
             } else throw e;
         }
     }
 
-    // Modify reference to files
-    const importPaths = [path.resolve(__dirname, "../lib/esm/assets/scss/_index.scss"), path.resolve(__dirname, "../lib/cjs/assets/scss/_index.scss")]
+    if (!skip) {
+        // Modify reference to files
+        const importPaths = [path.resolve(__dirname, "../lib/esm/assets/scss/_index.scss"), path.resolve(__dirname, "../lib/cjs/assets/scss/_index.scss")]
 
-    for (let file of importPaths) {
-        // rewrite both files
-        fs.unlinkSync(file);
-        fs.writeFileSync(file, '@import "../../../../../../../components.config.scss";\n@import "./core/";\n');
+        for (let file of importPaths) {
+            // rewrite both files
+            fs.unlinkSync(file);
+            fs.writeFileSync(file, '@import "../../../../../../../components.config.scss";\n@import "./core/";\n');
+        }
     }
 })();

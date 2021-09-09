@@ -36,7 +36,8 @@
         "overrides": [
             {
                 "files": [
-                    "**/*.stories.*"
+                    "**/*.stories.*",
+                    "**/*.test.*"
                 ],
                 "rules": {
                     "import/no-anonymous-default-export": "off"
