@@ -1,3 +1,19 @@
+# v0.1.71 (Thu Sep 09 2021)
+
+#### ⚠️ Pushed to `main`
+
+- same change but to cd ([@noahvarghese](https://github.com/noahvarghese))
+- skip prelight check ([@noahvarghese](https://github.com/noahvarghese))
+- fixed final errors ([@noahvarghese](https://github.com/noahvarghese))
+- fixed errors caused by previous, and modified cd to depend on ci tests ([@noahvarghese](https://github.com/noahvarghese))
+- added tests for input modified install script to not throw errors in development, added ci/cd seperations and setup tests, as well as modeified underlying states ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.70 (Wed Sep 08 2021)
 
 #### ⚠️ Pushed to `main`
