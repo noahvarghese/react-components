@@ -16,10 +16,10 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
                 type="checkbox"
                 id={props.name}
                 name={props.name}
-                checked={props.state.value}
+                checked={props.state.state}
                 onChange={() =>
                     !props.readonly
-                        ? props.state.setState(!props.state.value)
+                        ? props.state.setState(!props.state.state)
                         : null
                 }
                 readOnly={props.readonly}
