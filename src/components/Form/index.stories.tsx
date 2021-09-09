@@ -45,10 +45,10 @@ CardFormMultipleButtons.args = {
                 name="email"
                 required
                 placeholder="email"
-                state={{ value: "", setState: () => console.log("changed") }}
+                state={{ state: "", setState: () => console.log("changed") }}
                 errorState={{
                     setError: console.error,
-                    value: "",
+                    error: "",
                 }}
             />
             <Checkbox
@@ -56,7 +56,7 @@ CardFormMultipleButtons.args = {
                     setState: () => {
                         return;
                     },
-                    value: false,
+                    state: false,
                 }}
                 name="Checkbox"
                 label="Checkbox"
@@ -66,7 +66,7 @@ CardFormMultipleButtons.args = {
                 name="password"
                 required
                 placeholder="password"
-                state={{ value: "", setState: () => console.log("changed") }}
+                state={{ state: "", setState: () => console.log("changed") }}
             />
         </>
     ),

@@ -17,8 +17,8 @@ const DeptSelect: React.FC = () => {
             name="department"
             placeholder="department"
             required={true}
-            state={{ value: selected, setState: setSelected }}
-            errorState={{ setError, value: error }}
+            state={{ state: selected, setState: setSelected }}
+            errorState={{ setError, error: error }}
         />
     );
 };
