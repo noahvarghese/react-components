@@ -79,6 +79,25 @@ For a deeper dive into props that can be passed check out ProtectedRoute, Nav, a
 
 ### Button
 
+#### Description
+
+Styled Button.
+Will also render as an anchor tag if link is provided
+
+#### Props
+
+| name     | type                                         | default   | description                                                          |
+| -------- | -------------------------------------------- | --------- | -------------------------------------------------------------------- |
+| primary  | [boolean]                                    | false     | determines whether to use the primary or secondary color             |
+| text     | string                                       |           | button text                                                          |
+| disabled | [boolean]                                    | undefined | sets button disabled                                                 |
+| link     | [string]                                     | undefined | if set, renders as an anchor tag but with same stylings as button    |
+| onClick  | [(e: MouseEvent<unknown, unknown>) => void;] | undefined | action to perform when clicked, can be applied to anchor tag as well |
+| size     | ["small" \| "medium" \| "large"]             | small     | determines the size of the button                                    |
+| type     | ["button" \| "reset" \| "submit" ]           | button    | determines button type, does not apply to anchor                     |
+
+#### Sample Props
+
 ### Checkbox
 
 ### DropdownArrow
