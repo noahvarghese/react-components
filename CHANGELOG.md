@@ -1,3 +1,15 @@
+# v0.1.82 (Fri Sep 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- stupid tsconfig keeps updating itself ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.81 (Fri Sep 10 2021)
 
 #### ⚠️ Pushed to `main`
