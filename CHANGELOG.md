@@ -1,3 +1,16 @@
+# v0.1.77 (Fri Sep 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added props table ([@noahvarghese](https://github.com/noahvarghese))
+- adding documentation ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.76 (Thu Sep 09 2021)
 
 #### ⚠️ Pushed to `main`
