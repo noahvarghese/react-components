@@ -1,6 +1,6 @@
 {
     "name": "@noahvarghese/react-components",
-    "version": "0.1.76",
+    "version": "0.1.77",
     "main": "./lib/cjs/index.js",
     "module": "./lib/esm/index.js",
     "types": "./lib/esm/index.d.ts",
