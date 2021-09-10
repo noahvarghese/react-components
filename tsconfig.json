@@ -11,7 +11,7 @@
       "DOM.Iterable",
       "ESNext"
     ],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "declaration": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
@@ -27,6 +27,10 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": [
     "src",

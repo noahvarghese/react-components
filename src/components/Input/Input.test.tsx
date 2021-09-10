@@ -232,7 +232,6 @@ describe("date input", () => {
                 inputEl,
                 `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
             );
-            screen.debug();
         });
         act(() => {
             fireEvent.input(inputEl, "");
