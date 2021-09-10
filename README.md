@@ -30,6 +30,14 @@ Accepts an array of routes, NavProps and FooterProps.
 
 For a deeper dive into props that can be passed check out ProtectedRoute, Nav, and Footer.
 
+#### Props
+
+| name        | type                                                                                                      | default | description                                                             |
+| ----------- | --------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------- |
+| navProps    | NavProps                                                                                                  |         | See Nav component                                                       |
+| routes      | {path: string?; component?: React.ComponenType<RouteComponentProps<any>> \| <React.ComponentType<any>>}[] |         | Same props as react-router-dom's Route component, or see ProtectedRoute |
+| footerProps | FooterProps                                                                                               |         | See Footer Component                                                    |
+
 #### Sample Props
 
 ```tsx
