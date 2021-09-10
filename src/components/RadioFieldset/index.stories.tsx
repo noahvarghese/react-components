@@ -8,7 +8,9 @@ export default {
     component: RadioFieldset,
 } as ComponentMeta<typeof RadioFieldset>;
 
-const Template: ComponentStory<typeof RadioFieldset> = (args) => <RadioFieldset {...args} />;
+const Template: ComponentStory<typeof RadioFieldset> = (args) => (
+    <RadioFieldset {...args} />
+);
 
 export const Unselected = Template.bind({});
 Unselected.args = {
@@ -19,16 +21,16 @@ Unselected.args = {
             name: "Radio",
             id: "Test1",
             state: {
-                value: true,
-            }
+                state: true,
+            },
         },
         {
             label: "Test 2",
             name: "Radio",
             id: "Test2",
             state: {
-                value: false,
-            }
-        }
-    ]
+                state: false,
+            },
+        },
+    ],
 };

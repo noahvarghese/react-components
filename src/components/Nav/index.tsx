@@ -4,8 +4,6 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import HamburgerToggle from "../HamburgerToggle";
-// import { useMediaQuery } from "react-responsive";
-// import { Link } from "react-router-dom";
 import "./index.scss";
 
 export interface NavProps {

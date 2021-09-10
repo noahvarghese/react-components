@@ -6,6 +6,7 @@ interface NotificationProps {
     display: boolean;
     hide: () => void;
     error?: boolean;
+    timeout?: number;
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
@@ -13,7 +14,7 @@ const Notification: React.FC<NotificationProps> = (props) => {
         if (props.display) {
             setTimeout(() => {
                 props.hide();
-            }, 2000);
+            }, props.timeout ?? 2000);
         }
     }, [props]);
 

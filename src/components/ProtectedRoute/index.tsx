@@ -20,7 +20,9 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 }) => {
     if (condition()) {
         return (
-            <Route {...rest} component={component} exact={exact} path={path} />
+            <Route {...rest} component={component} exact={exact} path={path}>
+                {rest.children}
+            </Route>
         );
     } else {
         return <Redirect to={redirectPath} />;
