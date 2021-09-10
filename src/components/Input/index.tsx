@@ -25,6 +25,7 @@ const Input: React.FC<InputProps> = ({
     validationOptions: { runOnInput, runOnComplete, validatorFn } = {
         runOnInput: true,
         runOnComplete: true,
+        validatorFn: undefined,
     },
     ...props
 }) => {
