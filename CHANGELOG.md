@@ -1,3 +1,17 @@
+# v0.1.78 (Fri Sep 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- updated documentation ([@noahvarghese](https://github.com/noahvarghese))
+- 0.1.78 ([@noahvarghese](https://github.com/noahvarghese))
+- adding in button and trying to update npm's readme ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.77 (Fri Sep 10 2021)
 
 #### ⚠️ Pushed to `main`
