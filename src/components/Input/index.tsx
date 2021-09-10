@@ -21,19 +21,13 @@ interface InputProps {
     autoComplete?: string;
 }
 
-const Input: React.FC<InputProps> = ({
-    validationOptions: { runOnInput, runOnComplete, validatorFn } = {
-        runOnInput: true,
-        runOnComplete: true,
-        validatorFn: undefined,
-    },
-    ...props
-}) => {
-    let chosenValidator: ValidatorFunction | undefined = validatorFn;
+const Input: React.FC<InputProps> = (props) => {
+    let chosenValidator: ValidatorFunction | undefined =
+        props.validationOptions?.validatorFn ?? undefined;
 
     const validatorKeys = Object.keys(validators);
 
-    if (!chosenValidator) {
+    if (chosenValidator === undefined) {
         if (validatorKeys.includes(props.type)) {
             chosenValidator = validators[props.type];
         } else if (
@@ -85,14 +79,23 @@ const Input: React.FC<InputProps> = ({
                 required={true}
                 id={props.name}
                 onChange={(e) => {
-                    validate(e.currentTarget.value, runOnInput);
+                    validate(
+                        e.currentTarget.value,
+                        props.validationOptions?.runOnInput ?? true
+                    );
                 }}
                 // This is here for date change tests
                 onInput={(e) => {
-                    validate(e.currentTarget.value, runOnInput);
+                    validate(
+                        e.currentTarget.value,
+                        props.validationOptions?.runOnInput ?? true
+                    );
                 }}
                 onBlur={(e) => {
-                    validate(e.currentTarget.value, runOnComplete);
+                    validate(
+                        e.currentTarget.value,
+                        props.validationOptions?.runOnComplete ?? true
+                    );
                 }}
                 className={
                     (props.errorState && props.errorState.error
