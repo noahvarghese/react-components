@@ -1,3 +1,17 @@
+# v0.1.80 (Fri Sep 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- should be fixed ([@noahvarghese](https://github.com/noahvarghese))
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- updated select props table broken ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.78 (Fri Sep 10 2021)
 
 #### ⚠️ Pushed to `main`
