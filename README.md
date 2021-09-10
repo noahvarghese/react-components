@@ -528,7 +528,7 @@ Styled select dropdown
 | items       | {id: number; value: any; }[]                                                                                                                         |                                               | items to display in dropdown                                                                                                             |
 | required    | boolean                                                                                                                                              |                                               | whether the field is required, this is superficial as the html required attribute is always set to true so the animations fire correctly |
 | errorState  | {error: string; setError: (val: string) => void                                                                                                      | React.Dispatch<React.SetStateAction<string>>} |                                                                                                                                          | allows central error store |
-| state       | {state: {id: number; value: string;}, setState: ({id: number, value: string}) => React.Dispatch<React.SetStateAction<{id: number; value: string;}>>} | allows central store                          |
+| state       | {state: {id: number; value: string;}, setState: ({id: number, value: string}) => React.Dispatch<React.SetStateAction<{id: number; value: string;}>>} |                                               | allows central store                                                                                                                     |
 
 #### Sample Usage
 
