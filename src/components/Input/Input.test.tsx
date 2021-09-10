@@ -181,6 +181,76 @@ describe("postal code input", () => {
     });
 });
 
+describe("custom validator", () => {
+    const Wrapper = () => {
+        const [state, setState] = useState("");
+        const [error, setError] = useState("");
+
+        return (
+            <Input
+                type="password"
+                placeholder="password"
+                required
+                autoComplete="new-password"
+                name="password"
+                state={{
+                    state,
+                    setState,
+                }}
+                errorState={{ error, setError }}
+                validationOptions={{
+                    runOnComplete: true,
+                    runOnInput: true,
+                    validatorFn: (val: string, field: string = "password") => {
+                        if (val.length < 8) {
+                            return {
+                                success: false,
+                                errorMessage:
+                                    "Password must be at least 8 characters",
+                            };
+                        } else {
+                            return {
+                                success: true,
+                            };
+                        }
+                    },
+                }}
+            />
+        );
+    };
+
+    let unmount: () => void;
+    beforeEach(() => {
+        act(() => {
+            unmount = render(<Wrapper />).unmount;
+        });
+    });
+
+    afterEach(() => {
+        unmount();
+        cleanup();
+    });
+
+    test("custom validator gives error", () => {
+        const inputEl = screen.getByLabelText(/password/i);
+        userEvent.type(inputEl, "test");
+
+        expect(
+            getByText(
+                inputEl.parentElement,
+                "Password must be at least 8 characters"
+            )
+        ).toBeInTheDocument();
+    });
+
+    test("custome validator passes", () => {
+        const inputEl = screen.getByLabelText(/password/i);
+        userEvent.type(inputEl, "password");
+
+        expect(inputEl.classList).not.toContain("error");
+    });
+});
+
 describe("date input", () => {
     const Wrapper = () => {
         const [state, setState] = useState("");

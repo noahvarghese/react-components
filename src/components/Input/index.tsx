@@ -32,15 +32,18 @@ const Input: React.FC<InputProps> = ({
 
     const validatorKeys = Object.keys(validators);
 
-    if (validatorKeys.includes(props.type)) {
-        chosenValidator = validators[props.type];
-    } else if (
-        props.autoComplete &&
-        validatorKeys.includes(props.autoComplete.split("-").join("_"))
-    ) {
-        chosenValidator = validators[props.autoComplete.split("-").join("_")];
-    } else if (props.required) {
-        chosenValidator = validators.required;
+    if (!chosenValidator) {
+        if (validatorKeys.includes(props.type)) {
+            chosenValidator = validators[props.type];
+        } else if (
+            props.autoComplete &&
+            validatorKeys.includes(props.autoComplete.split("-").join("_"))
+        ) {
+            chosenValidator =
+                validators[props.autoComplete.split("-").join("_")];
+        } else if (props.required) {
+            chosenValidator = validators.required;
+        }
     }
 
     const validate = useCallback(
