@@ -1,3 +1,15 @@
+# v0.1.85 (Mon Sep 13 2021)
+
+#### ⚠️ Pushed to `main`
+
+- fixed string interpolation ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.84 (Mon Sep 13 2021)
 
 #### ⚠️ Pushed to `main`
