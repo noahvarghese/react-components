@@ -50,7 +50,7 @@ div.input-container {
 
         &[type="date"] + label span {
             transform: translateY(-150%);
-            font-size: 14px;
+            font-size: $_root-font-size;
         }
 
         &:not([type="date"]) {
@@ -58,7 +58,7 @@ div.input-container {
             &:valid + label span,
             &.has-input + label span {
                 transform: translateY(-150%);
-                font-size: 14px;
+                font-size: $_root-font-size;
             }
         }
 
