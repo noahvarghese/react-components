@@ -1,3 +1,15 @@
+# v0.1.84 (Mon Sep 13 2021)
+
+#### ⚠️ Pushed to `main`
+
+- used variable interpolation for root font size ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.83 (Fri Sep 10 2021)
 
 #### ⚠️ Pushed to `main`
