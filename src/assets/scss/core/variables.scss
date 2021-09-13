@@ -36,8 +36,8 @@ $_highlight-color: if(
     variable-exists(
         $name: "default_theme",
     ),
-    map-get($selected-theme, _highlight-color),
-    $_highlight-color
+    map-get($selected-theme, highlight-color),
+    $highlight-color
 );
 
 $_accent-color: if(
