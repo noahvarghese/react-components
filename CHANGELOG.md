@@ -1,3 +1,17 @@
+# v0.1.88 (Mon Sep 13 2021)
+
+#### ⚠️ Pushed to `main`
+
+- updated root font size again ([@noahvarghese](https://github.com/noahvarghese))
+- Merge branch 'main' of github.com:noahvarghese/react-components ([@noahvarghese](https://github.com/noahvarghese))
+- apply root font-size correctly ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.87 (Mon Sep 13 2021)
 
 #### ⚠️ Pushed to `main`
