@@ -1,3 +1,15 @@
+# v0.1.87 (Mon Sep 13 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added modification to input label font size ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.86 (Mon Sep 13 2021)
 
 #### ⚠️ Pushed to `main`
