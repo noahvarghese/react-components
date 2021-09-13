@@ -1,3 +1,15 @@
+# v0.1.86 (Mon Sep 13 2021)
+
+#### ⚠️ Pushed to `main`
+
+- fixing typos in scss config ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.85 (Mon Sep 13 2021)
 
 #### ⚠️ Pushed to `main`
