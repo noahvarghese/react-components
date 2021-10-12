@@ -1,3 +1,15 @@
+# v0.1.90 (Tue Oct 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- added loading component ([@noahvarghese](https://github.com/noahvarghese))
+
+#### Authors: 1
+
+- Noah Varghese ([@noahvarghese](https://github.com/noahvarghese))
+
+---
+
 # v0.1.89 (Fri Sep 17 2021)
 
 #### ⚠️ Pushed to `main`
