@@ -1,0 +1,13 @@
+@import "../../assets/scss";
+
+.Loading {
+    @import "../../assets/scss/defaults.scss";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: $_secondary-color;
+    color: $_bg-color;
+    padding: 2rem;
+}
