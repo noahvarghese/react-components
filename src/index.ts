@@ -7,6 +7,7 @@ export { default as Footer } from "./components/Footer";
 export { default as Form } from "./components/Form";
 export { default as HamburgerToggle } from "./components/HamburgerToggle";
 export { default as Input } from "./components/Input";
+export { default as Loading } from "./components/Loading";
 export { default as Nav } from "./components/Nav";
 export { default as Notification } from "./components/Notification";
 export { default as ProtectedRoute } from "./components/ProtectedRoute";
